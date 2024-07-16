@@ -5,14 +5,14 @@ import ClassTime from './TimeTable.ClassTime'
 
 const Schedule = () => {
     
-  const [activeTab, setActiveTab] = useState("CVResume");
+  const [activeTab, setActiveTab] = useState("TimeTable");
     const renderContent = () => {
         switch (activeTab) {
           case "TimeTable":
             return <ClassTime />;
-          case "CVResume":
+          case "TimeTable":
             return <ClassTime />;
-          case "Tests":
+          case "TimeTable":
             return <ClassTime />;
           default:
             return <ClassTime />;
