@@ -1,10 +1,10 @@
 import React from 'react';
-import Nav from '@/components/common/Nav/Nav';
+import StudentSidebar from '@/components/common/Nav/StudentSidebar';
 
 const StudentDashboard = () => {
   return (
     <div className="flex gap-4">
-      <Nav />
+      <StudentSidebar />
       <div className="flex w-full">
         student kudasai
       </div>
