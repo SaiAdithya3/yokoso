@@ -1,9 +1,9 @@
-import React, { useState, useEffect, useRef } from 'react'
-import { Link, useNavigate } from "react-router-dom"
-import { Button } from "../../components/ui/button"
-import { Input } from "../../components/ui/input"
-import { Label } from "../../components/ui/label"
-
+import React, { useState, useEffect, useRef } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { Button } from "../../components/ui/button";
+import { Input } from "../../components/ui/input";
+import { Label } from "../../components/ui/label";
+import { IoIosArrowDown } from "react-icons/io";
 
 const Login = () => {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
@@ -28,14 +28,13 @@ const Login = () => {
 
   const handleLogin = (event) => {
     event.preventDefault();
-    if (selectedDashboard == 'student-dashboard') {
+    if (selectedDashboard == "student-dashboard") {
       history("/s/dashboard");
-    } else if (selectedDashboard == 'admin-dashboard') {
+    } else if (selectedDashboard == "admin-dashboard") {
       history("/a/dashboard");
-    } else if (selectedDashboard == 'faculty-dashboard') {
+    } else if (selectedDashboard == "faculty-dashboard") {
       history("/f/dashboard");
-    }
-    else {
+    } else {
       alert("Please select a dashboard to navigate to.");
     }
   };
@@ -49,43 +48,60 @@ const Login = () => {
 
   return (
     <div className="w-full lg:grid lg:min-h-[600px] lg:grid-cols-2  xl:min-h-[800px]">
-      <div className="flex items-center justify-center py-12  border-r">
-        <div className="mx-auto grid w-[350px] gap-6">
+      <div className="flex -mt-20 items-center justify-center   border-r">
+        <div className="mx-auto grid w-[400px] gap-6">
           <div className="grid gap-2 text-center">
-            <h1 className="text-3xl font-bold">Login</h1>
-            <p className="text-sm text-muted-foreground">
-              Enter your email below to login to your account
-            </p>
+            <h1 className="text-4xl font-bold">Login</h1>
+            <p className="text-sm text-muted-foreground"></p>
           </div>
           <div className="grid gap-4">
-            <div className="grid gap-2">
-              <Label htmlFor="email">Email</Label>
-              <Input
-                id="email"
-                type="email"
-                placeholder="student@cmrit.com"
-
-              />
-            </div>
-            <div className="grid gap-2">
-              <div className="flex items-center">
-                <Label htmlFor="password">Password</Label>
-                <Link
-                  href="/forgot-password"
-                  className="ml-auto inline-block text-sm underline"
-                >
-                  Forgot your password?
-                </Link>
+            <div className="grid gap-6">
+              <div className="grid    gap-2">
+                <Label htmlFor="email" className="ml-2">
+                  Email
+                </Label>
+                <Input
+                  className=" h-12"
+                  id="email"
+                  type="email"
+                  placeholder="student@cmrit.com"
+                />
               </div>
-              <Input id="password" type="password" />
+              <div className="grid gap-2">
+                  <Label htmlFor="password" className=" ml-2">
+                    Password
+                  </Label>
+                    <Input
+                      placeholder="Password"
+                      className=" h-12"
+                      id="password"
+                      type="password"
+                    />
+                <div className="flex items-center">
+                  <Link
+                    href="/forgot-password"
+                    className="ml-auto inline-block text-sm underline"
+                  >
+                    Forgot your password?
+                  </Link>
+                </div>
+              </div>
             </div>
-            <Button type="submit" className="w-full" onClick={handleLogin}>
+            <Button
+              type="submit"
+              className=" bg-[#003a5b] h-12 w-full"
+              onClick={handleLogin}
+            >
               Login
             </Button>
 
-            <div className="relative w-full" ref={dropdownRef}>
-              <Button onClick={handleDropdownToggle} className="w-full !bg-white !border !text-black !hover:bg-zinc-100">
+            <div className="relative w-full " ref={dropdownRef}>
+              <Button
+                onClick={handleDropdownToggle}
+                className="w-full  !bg-gray-100/50 !border !text-black h-12 !hover:bg-zinc-100"
+              >
                 {selectedDashboard ? selectedDashboard : "Select Dashboard"}
+                <IoIosArrowDown className=" ml-3" />
               </Button>
               {isDropdownOpen && (
                 <div className="absolute w-full right-0 mt-2 bg-white border rounded shadow-lg">
@@ -111,12 +127,6 @@ const Login = () => {
               )}
             </div>
           </div>
-          <div className="mt-4 text-center text-sm">
-            Don&apos;t have an account?{" "}
-            <Link href="#" className="underline">
-              Sign up
-            </Link>
-          </div>
         </div>
       </div>
       <div className="   !flex-col !flex !items-center gap-5 !justify-center -mt-32   lg:block">
@@ -130,7 +140,7 @@ const Login = () => {
         </h1>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;
