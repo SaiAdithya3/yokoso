@@ -1,7 +1,7 @@
-import React from 'react'
-import Nav from '../common/Nav/Nav'
-import Sidebar from '../dashboard/components/Sidebar'
-import CardPage from './components/CardPage'
+import React from 'react';
+import Nav from '../common/Nav/Nav';
+import Sidebar from '../dashboard/components/Sidebar';
+import CardPage from './components/CardPage';
 
 const Dashboard = () => {
   return (
