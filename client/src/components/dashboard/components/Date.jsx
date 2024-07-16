@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { format, addDays, subDays, isSameDay } from 'date-fns';
-
+import {ChevronLeft, ChevronRight } from 'lucide-react';
 const DateScheduler = () => {
   const [startDate, setStartDate] = useState(new Date());
   const [selectedDate, setSelectedDate] = useState(new Date());
@@ -21,10 +21,14 @@ const DateScheduler = () => {
     const dateFormat = "MMMM yyyy";
 
     return (
-      <div className="flex justify-between items-center py-2">
-        <button onClick={prevDays} className="px-4 py-2 bg-gray-300 rounded-md">Prev</button>
+      <div className="flex justify-between items-center bg-gray-400/10 px-2 py-1 rounded-lg">
+        <button onClick={prevDays} className="px-2 py-1 hover:bg-white/50 bg-white border rounded-md">
+        <ChevronLeft />
+        </button>
         <span className="text-xl">{format(startDate, dateFormat)}</span>
-        <button onClick={nextDays} className="px-4 py-2 bg-gray-300 rounded-md">Next</button>
+        <button onClick={nextDays} className="px-2 py-1 hover:bg-white/50 bg-white border rounded-md">
+        <ChevronRight />
+        </button>
       </div>
     );
   };
