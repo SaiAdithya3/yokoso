@@ -39,7 +39,9 @@ const NavSection = ({ title, children }) => (
   </div>
 );
 
-const StudentSidebar = () => (
+const StudentSidebar = () => {
+
+  return (
   <div className="flex sticky top-0 h-screen bg-gray-100">
     <aside className="w-64 flex flex-col justify-between bg-white border-r">
       <div className="flex flex-col w-full">
@@ -57,26 +59,32 @@ const StudentSidebar = () => (
               Dashboard
             </NavItem>
             <NavItem to="/calendar" icon={CalendarIcon}>
-              Calendar
+              LMS / Assignments
             </NavItem>
             <NavItem to="/time-off" icon={ClockIcon}>
-              Time Off
+              Time Table
             </NavItem>
-            {/* <NavItem to="/projects" icon={ProjectorIcon}>
-              Projects
+            <NavItem to="/projects" icon={ProjectorIcon}>
+              Exams / Results
             </NavItem>
             <NavItem to="/team" icon={GroupIcon}>
-              Team
+              Attendance
             </NavItem>
             <NavItem to="/notes" icon={StickyNoteIcon}>
-              Notes
+              Residential
             </NavItem>
             <NavItem to="/benefits" icon={FlagIcon} badge="NEW">
-              Benefits
+              RMS
             </NavItem>
             <NavItem to="/documents" icon={FilesIcon}>
-              Documents
-            </NavItem> */}
+              Finance
+            </NavItem>
+            <NavItem to="/bank" icon={FilesIcon}>
+              Mess
+            </NavItem>
+            <NavItem to="/bank" icon={FilesIcon}>
+              Mess
+            </NavItem>
           </NavSection>
           <NavSection title="FAVORITES">
             <NavItem to="/synergy-team" icon={() => <span className="w-2.5 h-2.5 bg-purple-500 rounded-full" />}>
@@ -91,12 +99,7 @@ const StudentSidebar = () => (
                 36
               </Badge>
             </NavItem>
-            <NavItem to="/udemy-courses" icon={() => <span className="w-2.5 h-2.5 bg-purple-500 rounded-full" />}>
-              Udemy Courses
-              <Badge variant="secondary" className="ml-auto">
-                36
-              </Badge>
-            </NavItem>
+
           </NavSection>
         </nav>
         <div className="hidden p-4 mt-auto">
@@ -109,17 +112,18 @@ const StudentSidebar = () => (
         </div>
       </div>
 
-      <div className="hover:bg-zinc-100 group cursor-pointer flex items-center p-4 border-t">
+      <Link to="/profile" className={`hover:bg-zinc-100  group cursor-pointer flex items-center p-4 border-t`}>
         <Avatar name="banaki" variant="beam" />
         <div className="ml-3">
           <h3 className="text-sm font-semibold">Bankai muz</h3>
           <p className="text-xs text-muted-foreground">info@devatoms.com</p>
         </div>
         <HiMiniChevronRight className="text-2xl mx-2 group-hover:translate-x-2 transition-all" />
-      </div>
+      </Link>
     </aside>
   </div>
-);
+)
+};
 
 const CalendarIcon = (props) => (
   <svg

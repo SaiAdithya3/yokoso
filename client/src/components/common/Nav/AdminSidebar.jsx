@@ -109,14 +109,14 @@ const AdminSidebar = () => (
         </div>
       </div>
 
-      <div className="hover:bg-zinc-100 group cursor-pointer flex items-center p-4 border-t">
+      <Link to="/a/profile" className="hover:bg-zinc-100 group cursor-pointer flex items-center p-4 border-t">
         <Avatar name="banaki" variant="beam" />
         <div className="ml-3">
           <h3 className="text-sm font-semibold">Bankai muz</h3>
           <p className="text-xs text-muted-foreground">info@devatoms.com</p>
         </div>
         <HiMiniChevronRight className="text-2xl mx-2 group-hover:translate-x-2 transition-all" />
-      </div>
+      </Link>
     </aside>
   </div>
 );
