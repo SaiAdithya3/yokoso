@@ -9,6 +9,7 @@ import FStudents from './pages/f-students/FStudents';
 import StudentProfile from './pages/Profile/StudentProfile';
 import FacultyProfile from './pages/Profile/FacultyProfile';
 import AdminProfile from './pages/Profile/AdminProfile';
+import Fwrapper from './pages/f-students/F-SDetails/Student.Fwrapper';
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
           <Route path="/f/dashboard" element={<FacultyDashboard />} />
           <Route path="/s/dashboard" element={<StudentDashboard />} />
           <Route path="/f/students" element={<FStudents />} />
+          <Route path='/f/students/:id' element={<Fwrapper />} />
           <Route path="/f/profile" element={<FacultyProfile />} />
           <Route path="/s/profile" element={<StudentProfile />} />
           <Route path="/a/profile" element={<AdminProfile />} />
