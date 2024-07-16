@@ -66,7 +66,7 @@ const Nav = () => (
               Projects
             </NavItem>
             <NavItem to="/team" icon={GroupIcon}>
-              Team
+              Students
             </NavItem>
             <NavItem to="/notes" icon={StickyNoteIcon}>
               Notes
