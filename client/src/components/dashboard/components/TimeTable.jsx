@@ -1,6 +1,7 @@
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import React from 'react'
+import Schedule from './TimeTable.Schedule'
 
 const TimeTable = () => {
   return (
@@ -12,6 +13,10 @@ const TimeTable = () => {
       <div>
         <Button>Bankai</Button>
         <Card>ajbaj</Card>
+      </div>
+      <div>
+        <Schedule/>
+
       </div>
     </div>
   )
