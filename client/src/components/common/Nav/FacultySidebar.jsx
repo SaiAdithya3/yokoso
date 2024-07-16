@@ -65,8 +65,8 @@ const FacultySidebar = () => (
             <NavItem to="/projects" icon={ProjectorIcon}>
               Projects
             </NavItem>
-            <NavItem to="/team" icon={GroupIcon}>
-              Team
+            <NavItem to="/f/students" icon={GroupIcon}>
+              Students
             </NavItem>
             <NavItem to="/notes" icon={StickyNoteIcon}>
               Notes
