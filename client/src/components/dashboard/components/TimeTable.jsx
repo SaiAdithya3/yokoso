@@ -1,3 +1,5 @@
+import { Button } from '@/components/ui/button'
+import { Card } from '@/components/ui/card'
 import React from 'react'
 
 const TimeTable = () => {
@@ -8,7 +10,8 @@ const TimeTable = () => {
         <button className=' px-3 py-1 border   rounded-lg'>See All</button>
       </div>
       <div>
-        
+        <Button>Bankai</Button>
+        <Card>ajbaj</Card>
       </div>
     </div>
   )

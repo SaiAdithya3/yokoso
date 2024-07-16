@@ -1,520 +1,350 @@
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-import { Link } from "react-router-dom";
+import React from "react";
+import { Link, useLocation } from "react-router-dom";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
-import { CartesianGrid, XAxis, Line, LineChart } from "recharts";
-import {
-  ChartTooltipContent,
-  ChartTooltip,
-  ChartContainer,
-} from "@/components/ui/chart";
+import Avatar from "boring-avatars";
+import { HiMiniChevronRight } from "react-icons/hi2";
 
-export function Nav() {
+const Icon = ({ IconComponent, ...props }) => (
+  <IconComponent {...props} className="w-5 h-5" />
+);
+
+const NavItem = ({ to, icon: IconComponent, children, badge }) => {
+  const location = useLocation();
+  const isActive = location.pathname === to;
+  const activeClass = isActive ? "text-zinc-50 px-4 bg-black hover:text-black" : "text-muted-foreground";
+
   return (
-    <div className="flex sticky  min-h-screen bg-gray-100">
-      <aside className="w-64 bg-white border-r">
-        <div className="flex items-center justify-center h-16 border-b">
-          <Avatar>
-            <AvatarImage src="/placeholder-user.jpg" />
-            <AvatarFallback>SY</AvatarFallback>
-          </Avatar>
+    <li>
+      <Link
+        to={to}
+        className={`flex items-center p-2 space-x-3 rounded-lg hover:bg-gray-100 ${activeClass}`}
+        prefetch={false}
+      >
+        <Icon IconComponent={IconComponent} />
+        <span>{children}</span>
+        {badge && (
+          <Badge variant="secondary" className="ml-auto">
+            {badge}
+          </Badge>
+        )}
+      </Link>
+    </li>
+  );
+};
+
+const NavSection = ({ title, children }) => (
+  <div>
+    <h3 className="text-xs font-semibold text-muted-foreground">{title}</h3>
+    <ul className="mt-2 space-y-2">{children}</ul>
+  </div>
+);
+
+const Nav = () => (
+  <div className="flex sticky top-0 h-screen bg-gray-100">
+    <aside className="w-64 flex flex-col justify-between bg-white border-r">
+      <div className="flex flex-col w-full">
+
+        <div className="flex items-center justify-start px-4 h-16 border-b">
+          <Avatar name="shinjo" variant="beam" />
           <div className="ml-3">
             <h2 className="text-lg font-semibold">Yokoso CMR</h2>
             <p className="text-sm text-muted-foreground">Sasta UMS</p>
           </div>
         </div>
         <nav className="p-4 space-y-4">
-          <div>
-            <h3 className="text-xs font-semibold text-muted-foreground">
-              MAIN
-            </h3>
-            <ul className="mt-2 space-y-2">
-              <li>
-                <Link
-                  href="#"
-                  className="flex items-center p-2 space-x-3 rounded-md hover:bg-gray-100"
-                  prefetch={false}
-                >
-                  <LayoutDashboardIcon className="w-5 h-5" />
-                  <span>Dashboard</span>
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
-                  className="flex items-center p-2 space-x-3 rounded-md hover:bg-gray-100"
-                  prefetch={false}
-                >
-                  <CalendarIcon className="w-5 h-5" />
-                  <span>Calendar</span>
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
-                  className="flex items-center p-2 space-x-3 rounded-md hover:bg-gray-100"
-                  prefetch={false}
-                >
-                  <ClockIcon className="w-5 h-5" />
-                  <span>Time Off</span>
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
-                  className="flex items-center p-2 space-x-3 rounded-md hover:bg-gray-100"
-                  prefetch={false}
-                >
-                  <ProjectorIcon className="w-5 h-5" />
-                  <span>Projects</span>
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
-                  className="flex items-center p-2 space-x-3 rounded-md hover:bg-gray-100"
-                  prefetch={false}
-                >
-                  <GroupIcon className="w-5 h-5" />
-                  <span>Team</span>
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
-                  className="flex items-center p-2 space-x-3 rounded-md hover:bg-gray-100"
-                  prefetch={false}
-                >
-                  <StickyNoteIcon className="w-5 h-5" />
-                  <span>Notes</span>
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
-                  className="flex items-center p-2 space-x-3 rounded-md hover:bg-gray-100"
-                  prefetch={false}
-                >
-                  <FlagIcon className="w-5 h-5" />
-                  <span>Benefits</span>
-                  <Badge variant="secondary" className="ml-auto">
-                    NEW
-                  </Badge>
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
-                  className="flex items-center p-2 space-x-3 rounded-md hover:bg-gray-100"
-                  prefetch={false}
-                >
-                  <FilesIcon className="w-5 h-5" />
-                  <span>Documents</span>
-                </Link>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h3 className="text-xs font-semibold text-muted-foreground">
-              FAVORITES
-            </h3>
-            <ul className="mt-2 space-y-2">
-              <li>
-                <Link
-                  href="#"
-                  className="flex items-center p-2 space-x-3 rounded-md hover:bg-gray-100"
-                  prefetch={false}
-                >
-                  <span className="w-2.5 h-2.5 bg-purple-500 rounded-full" />
-                  <span>Synergy Team</span>
-                  <Badge variant="secondary" className="ml-auto">
-                    36
-                  </Badge>
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
-                  className="flex items-center p-2 space-x-3 rounded-md hover:bg-gray-100"
-                  prefetch={false}
-                >
-                  <span className="w-2.5 h-2.5 bg-purple-500 rounded-full" />
-                  <span>Monday Redesign</span>
-                  <Badge variant="secondary" className="ml-auto">
-                    36
-                  </Badge>
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
-                  className="flex items-center p-2 space-x-3 rounded-md hover:bg-gray-100"
-                  prefetch={false}
-                >
-                  <span className="w-2.5 h-2.5 bg-purple-500 rounded-full" />
-                  <span>Udemy Courses</span>
-                  <Badge variant="secondary" className="ml-auto">
-                    36
-                  </Badge>
-                </Link>
-              </li>
-            </ul>
-          </div>
+          <NavSection title="MAIN">
+            <NavItem to="/" icon={LayoutDashboardIcon}>
+              Dashboard
+            </NavItem>
+            <NavItem to="/calendar" icon={CalendarIcon}>
+              Calendar
+            </NavItem>
+            <NavItem to="/time-off" icon={ClockIcon}>
+              Time Off
+            </NavItem>
+            <NavItem to="/projects" icon={ProjectorIcon}>
+              Projects
+            </NavItem>
+            <NavItem to="/team" icon={GroupIcon}>
+              Team
+            </NavItem>
+            <NavItem to="/notes" icon={StickyNoteIcon}>
+              Notes
+            </NavItem>
+            <NavItem to="/benefits" icon={FlagIcon} badge="NEW">
+              Benefits
+            </NavItem>
+            <NavItem to="/documents" icon={FilesIcon}>
+              Documents
+            </NavItem>
+          </NavSection>
+          <NavSection title="FAVORITES">
+            <NavItem to="/synergy-team" icon={() => <span className="w-2.5 h-2.5 bg-purple-500 rounded-full" />}>
+              Synergy Team
+              <Badge variant="secondary" className="ml-auto">
+                36
+              </Badge>
+            </NavItem>
+            <NavItem to="/monday" icon={() => <span className="w-2.5 h-2.5 bg-purple-500 rounded-full" />}>
+              Monday
+              <Badge variant="secondary" className="ml-auto">
+                36
+              </Badge>
+            </NavItem>
+            <NavItem to="/udemy-courses" icon={() => <span className="w-2.5 h-2.5 bg-purple-500 rounded-full" />}>
+              Udemy Courses
+              <Badge variant="secondary" className="ml-auto">
+                36
+              </Badge>
+            </NavItem>
+          </NavSection>
         </nav>
-        <div className="p-4 mt-auto">
-          <Link
-            href="#"
-            className="flex items-center p-2 space-x-3 rounded-md hover:bg-gray-100"
-            prefetch={false}
-          >
-            <SettingsIcon className="w-5 h-5" />
-            <span>Settings</span>
-          </Link>
-          <Link
-            href="#"
-            className="flex items-center p-2 space-x-3 rounded-md hover:bg-gray-100"
-            prefetch={false}
-          >
-            <PowerIcon className="w-5 h-5" />
-            <span>Support</span>
-          </Link>
+        <div className="hidden p-4 mt-auto">
+          <NavItem to="/settings" icon={SettingsIcon}>
+            Settings
+          </NavItem>
+          <NavItem to="/support" icon={PowerIcon}>
+            Support
+          </NavItem>
         </div>
-        <div className="flex items-center p-4 border-t">
-          <Avatar>
-            <AvatarImage src="/placeholder-user.jpg" />
-            <AvatarFallback>SW</AvatarFallback>
-          </Avatar>
-          <div className="ml-3">
-            <h3 className="text-sm font-semibold">Sophia Williams</h3>
-            <p className="text-xs text-muted-foreground">sophia@alignui.com</p>
-          </div>
+      </div>
+
+      <div className="hover:bg-zinc-100 group cursor-pointer flex items-center p-4 border-t">
+        <Avatar name="banaki" variant="beam" />
+        <div className="ml-3">
+          <h3 className="text-sm font-semibold">Bankai muz</h3>
+          <p className="text-xs text-muted-foreground">info@devatoms.com</p>
         </div>
-      </aside>
-    </div>
-  );
-}
+        <HiMiniChevronRight className="text-2xl mx-2 group-hover:translate-x-2 transition-all" />
+      </div>
+    </aside>
+  </div>
+);
 
-function CalendarIcon(props) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M8 2v4" />
-      <path d="M16 2v4" />
-      <rect width="18" height="18" x="3" y="4" rx="2" />
-      <path d="M3 10h18" />
-    </svg>
-  );
-}
+const CalendarIcon = (props) => (
+  <svg
+    {...props}
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M8 2v4" />
+    <path d="M16 2v4" />
+    <rect width="18" height="18" x="3" y="4" rx="2" />
+    <path d="M3 10h18" />
+  </svg>
+);
 
-function ChevronLeftIcon(props) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="m15 18-6-6 6-6" />
-    </svg>
-  );
-}
+const ChevronLeftIcon = (props) => (
+  <svg
+    {...props}
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="m15 18-6-6 6-6" />
+  </svg>
+);
 
-function ChevronRightIcon(props) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="m9 18 6-6-6-6" />
-    </svg>
-  );
-}
+const ChevronRightIcon = (props) => (
+  <svg
+    {...props}
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="m9 18 6-6-6-6" />
+  </svg>
+);
 
-function ClockIcon(props) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <circle cx="12" cy="12" r="10" />
-      <polyline points="12 6 12 12 16 14" />
-    </svg>
-  );
-}
+const ClockIcon = (props) => (
+  <svg
+    {...props}
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <circle cx="12" cy="12" r="10" />
+    <polyline points="12 6 12 12 16 14" />
+  </svg>
+);
 
-function FilesIcon(props) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M20 7h-3a2 2 0 0 1-2-2V2" />
-      <path d="M9 18a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h7l4 4v10a2 2 0 0 1-2 2Z" />
-      <path d="M3 7.6v12.8A1.6 1.6 0 0 0 4.6 22h9.8" />
-    </svg>
-  );
-}
+const FilesIcon = (props) => (
+  <svg
+    {...props}
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M20 7h-3a2 2 0 0 1-2-2V2" />
+    <path d="M9 18a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h7l4 4v10a2 2 0 0 1-2 2Z" />
+    <path d="M3 7.6v12.8A1.6 1.6 0 0 0 4.6 22h9.8" />
+  </svg>
+);
 
-function FlagIcon(props) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z" />
-      <line x1="4" x2="4" y1="22" y2="15" />
-    </svg>
-  );
-}
+const FlagIcon = (props) => (
+  <svg
+    {...props}
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z" />
+    <line x1="4" x2="4" y1="22" y2="15" />
+  </svg>
+);
 
-function GroupIcon(props) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M3 7V5c0-1.1.9-2 2-2h2" />
-      <path d="M17 3h2c1.1 0 2 .9 2 2v2" />
-      <path d="M21 17v2c0 1.1-.9 2-2 2h-2" />
-      <path d="M7 21H5c-1.1 0-2-.9-2-2v-2" />
-      <rect width="7" height="5" x="7" y="7" rx="1" />
-      <rect width="7" height="5" x="10" y="12" rx="1" />
-    </svg>
-  );
-}
+const GroupIcon = (props) => (
+  <svg
+    {...props}
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2" />
+    <circle cx="9" cy="7" r="4" />
+    <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+  </svg>
+);
 
-function LayoutDashboardIcon(props) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <rect width="7" height="9" x="3" y="3" rx="1" />
-      <rect width="7" height="5" x="14" y="3" rx="1" />
-      <rect width="7" height="9" x="14" y="12" rx="1" />
-      <rect width="7" height="5" x="3" y="16" rx="1" />
-    </svg>
-  );
-}
+const LayoutDashboardIcon = (props) => (
+  <svg
+    {...props}
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <rect x="3" y="3" width="7" height="7" />
+    <rect x="14" y="3" width="7" height="7" />
+    <rect x="14" y="14" width="7" height="7" />
+    <rect x="3" y="14" width="7" height="7" />
+  </svg>
+);
 
-function LinechartChart(props) {
-  return (
-    <div {...props}>
-      <ChartContainer
-        config={{
-          desktop: {
-            label: "Desktop",
-            color: "hsl(var(--chart-1))",
-          },
-        }}
-      >
-        <LineChart
-          accessibilityLayer
-          data={[
-            { month: "January", desktop: 186 },
-            { month: "February", desktop: 305 },
-            { month: "March", desktop: 237 },
-            { month: "April", desktop: 73 },
-            { month: "May", desktop: 209 },
-            { month: "June", desktop: 214 },
-          ]}
-          margin={{
-            left: 12,
-            right: 12,
-          }}
-        >
-          <CartesianGrid vertical={false} />
-          <XAxis
-            dataKey="month"
-            tickLine={false}
-            axisLine={false}
-            tickMargin={8}
-            tickFormatter={(value) => value.slice(0, 3)}
-          />
-          <ChartTooltip
-            cursor={false}
-            content={<ChartTooltipContent hideLabel />}
-          />
-          <Line
-            dataKey="desktop"
-            type="natural"
-            stroke="var(--color-desktop)"
-            strokeWidth={2}
-            dot={false}
-          />
-        </LineChart>
-      </ChartContainer>
-    </div>
-  );
-}
+const ProjectorIcon = (props) => (
+  <svg
+    {...props}
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M21 16V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v10" />
+    <circle cx="12" cy="14" r="4" />
+    <path d="M2 20h20" />
+    <path d="M7 20l-2 4" />
+    <path d="M17 20l2 4" />
+  </svg>
+);
 
-function PowerIcon(props) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M12 2v10" />
-      <path d="M18.4 6.6a9 9 0 1 1-12.77.04" />
-    </svg>
-  );
-}
+const StickyNoteIcon = (props) => (
+  <svg
+    {...props}
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M16 3h5v5" />
+    <path d="M12 22h8a2 2 0 0 0 2-2v-8" />
+    <path d="M16 3h-8a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4" />
+    <path d="M20 14l-7 7" />
+  </svg>
+);
 
-function ProjectorIcon(props) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M5 7 3 5" />
-      <path d="M9 6V3" />
-      <path d="m13 7 2-2" />
-      <circle cx="9" cy="13" r="3" />
-      <path d="M11.83 12H20a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h2.17" />
-      <path d="M16 16h2" />
-    </svg>
-  );
-}
+const SettingsIcon = (props) => (
+  <svg
+    {...props}
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <circle cx="12" cy="12" r="3" />
+    <path d="M19.4 15a1.6 1.6 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.6 1.6 0 0 0-1.82-.33 1.6 1.6 0 0 0-1 1.47V21a2 2 0 0 1-2 2h-1.2a2 2 0 0 1-2-2v-.11a1.6 1.6 0 0 0-1-1.47 1.6 1.6 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.6 1.6 0 0 0 5 15.4a1.6 1.6 0 0 0-1.47-1H3a2 2 0 0 1-2-2v-1.2a2 2 0 0 1 2-2h.11a1.6 1.6 0 0 0 1.47-1 1.6 1.6 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.6 1.6 0 0 0 9 5.6c.37-.06.75-.06 1.1 0H11a2 2 0 0 1 2 2v.11a1.6 1.6 0 0 0 1 1.47 1.6 1.6 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.6 1.6 0 0 0-.33 1.82V15z" />
+  </svg>
+);
 
-function SettingsIcon(props) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z" />
-      <circle cx="12" cy="12" r="3" />
-    </svg>
-  );
-}
+const PowerIcon = (props) => (
+  <svg
+    {...props}
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M18.36 6.64a9 9 0 1 1-12.73 0" />
+    <line x1="12" x2="12" y1="2" y2="12" />
+  </svg>
+);
 
-function StickyNoteIcon(props) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M16 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8Z" />
-      <path d="M15 3v4a2 2 0 0 0 2 2h4" />
-    </svg>
-  );
-}
-
-function XIcon(props) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M18 6 6 18" />
-      <path d="m6 6 12 12" />
-    </svg>
-  );
-}
+export default Nav;
