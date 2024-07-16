@@ -8,7 +8,7 @@ const HodTasks = () => {
   ];
 
   return (
-    <div className="bg-white shadow-lg w-[22rem] rounded-lg p-4">
+    <div className="bg-white border w-[22rem] rounded-2xl p-4">
       <h3 className="text-lg font-semibold text-gray-800 mb-3">HOD Tasks</h3>
       <div className="space-y-3">
         {tasks.map(task => (

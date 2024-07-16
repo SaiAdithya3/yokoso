@@ -1,16 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 import { Table, TableHead, TableBody, TableCell, TableRow } from "../ui/table";
 import sampleStudents from "./dummydata";
 import { useNavigate } from "react-router-dom";
 import Avatar from "boring-avatars";
+
 const ListStudents = () => {
-  const [students, setStudents] = useState(sampleStudents);
+  const [students, setStudents] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [sortField, setSortField] = useState("name");
   const [sortOrder, setSortOrder] = useState("asc");
   const [view, setView] = useState("list");
+  const [selectedSection, setSelectedSection] = useState("Computer Engineering"); // Default section
+
+  useEffect(() => {
+    const filteredStudents = sampleStudents.filter(
+      (student) => student.major === selectedSection
+    );
+    setStudents(filteredStudents);
+  }, [selectedSection]);
 
   const handleSearch = (e) => {
     setSearchTerm(e.target.value);
@@ -30,12 +39,21 @@ const ListStudents = () => {
 
   const navigate = useNavigate();
 
-  const filteredStudents = students.filter((student) =>
-    student.name.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const sectionNames = [
+    "Computer Engineering",
+    "Mechanical Engineering",
+    "Electrical Engineering",
+    "Civil Engineering",
+    "Chemical Engineering",
+    "Aerospace Engineering",
+    "Biomedical Engineering",
+    "Industrial Engineering",
+    "Environmental Engineering",
+    "Software Engineering",
+  ];
 
   return (
-    <div className="p-4 bg-white w-full ">
+    <div className="p-4 bg-white w-full">
       <div className="flex justify-between items-center mb-4">
         <Input
           type="text"
@@ -45,6 +63,32 @@ const ListStudents = () => {
           className="w-1/3"
         />
         <div className="flex space-x-2">
+          <div className="relative">
+            <select
+              value={selectedSection}
+              onChange={(e) => setSelectedSection(e.target.value)}
+              className="block appearance-none w-full bg-white border border-gray-300 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline"
+            >
+              {sectionNames.map((section, index) => (
+                <option key={index} value={section}>
+                  {section}
+                </option>
+              ))}
+            </select>
+            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+              <svg
+                className="fill-current h-4 w-4"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M9.293 12.95l3.354 3.353a1 1 0 101.414-1.414l-4.95-4.95a1 1 0 00-1.414 0l-4.95 4.95a1 1 0 001.414 1.414l3.354-3.353V18a1 1 0 102 0v-5.05z"
+                  clipRule="evenodd"
+                />
+              </svg>
+            </div>
+          </div>
           <Button
             onClick={() => setView("list")}
             variant={view === "list" ? "secondary" : "outline"}
@@ -85,10 +129,11 @@ const ListStudents = () => {
               </TableRow>
             </TableHead>
             <TableBody>
-              {filteredStudents.map((student) => (
+              {students.map((student) => (
                 <TableRow
-                onClick={() => navigate(`./${student.id}`)}
-                 key={student.id}>
+                  key={student.id}
+                  onClick={() => navigate(`./${student.id}`)}
+                >
                   <TableCell>
                     <div className="flex items-center">
                       <Avatar size={34} name={student.name} variant="beam" />
@@ -105,7 +150,7 @@ const ListStudents = () => {
           </Table>
         ) : (
           <div className="grid grid-cols-2 gap-4">
-            {filteredStudents.map((student) => (
+            {students.map((student) => (
               <div
                 key={student.id}
                 className="p-4 border cursor-pointer rounded-lg mb-2 flex items-center"
