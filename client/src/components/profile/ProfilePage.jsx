@@ -37,7 +37,7 @@ const ProfilePage = () => {
   const handleSelect = (key) => {
     setSelected(key);
   };
-
+//adcs
   return (
     <div className="flex flex-col w-full items-start">
       <div className="w-full sticky top-0 pt-6 bg-white/50 backdrop-blur-sm rounded-2xl border-gray-300">
