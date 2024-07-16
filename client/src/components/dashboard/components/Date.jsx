@@ -82,7 +82,7 @@ const DateScheduler = () => {
     <div className="max-w-md mx-auto p-4">
       {renderHeader()}
       {renderDays()}
-      {renderSchedule()}
+      {/* {renderSchedule()} */}
     </div>
   );
 };
