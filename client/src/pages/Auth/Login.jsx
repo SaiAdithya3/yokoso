@@ -68,15 +68,15 @@ const Login = () => {
                 />
               </div>
               <div className="grid gap-2">
-                  <Label htmlFor="password" className=" ml-2">
-                    Password
-                  </Label>
-                    <Input
-                      placeholder="Password"
-                      className=" h-12"
-                      id="password"
-                      type="password"
-                    />
+                <Label htmlFor="password" className=" ml-2">
+                  Password
+                </Label>
+                <Input
+                  placeholder="Password"
+                  className=" h-12"
+                  id="password"
+                  type="password"
+                />
                 <div className="flex items-center">
                   <Link
                     href="/forgot-password"

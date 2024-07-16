@@ -1,4 +1,7 @@
-import React from "react";
+import { Button } from '@/components/ui/button'
+import { Card } from '@/components/ui/card'
+import React from 'react'
+import Schedule from './TimeTable.Schedule'
 import DateScheduler from "./Date";
 
 const TimeTable = () => {
@@ -10,6 +13,11 @@ const TimeTable = () => {
       </div>
       <div>
         <DateScheduler />
+      </div>
+      <div>
+        <Schedule/>
+        
+
       </div>
     </div>
   );
