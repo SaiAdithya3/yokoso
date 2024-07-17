@@ -1,16 +1,31 @@
-import { Button } from "@/components/ui/button";
 import React from "react";
+import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
+import Fresult from "./Student.Fresult";
+import { LineChart, CartesianGrid, XAxis, Line } from "recharts";
+import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
+import  StudentGraph  from "./Student.FlineChart";
 
 const Fdetails = () => {
+  const semesterData = [
+    { semester: 1, tgpa: 3.8 },
+    { semester: 2, tgpa: 3.9 },
+    { semester: 3, tgpa: 4.0 },
+    { semester: 4, tgpa: 3.7 },
+    { semester: 5, tgpa: 3.9 },
+    { semester: 6, tgpa: 4.0 },
+    { semester: 7, tgpa: 3.8 },
+    { semester: 8, tgpa: 3.9 },
+  ];
+
   return (
-    <div className=" flex px-2 py-4 bg-gray-100/30 w-full">
+    <div className="flex-col flex px-2 py-4 bg-gray-100/30 w-full">
       <Profile />
+      <StudentGraph/>
+      <Fresult />
     </div>
   );
 };
-
-export default Fdetails;
 
 const Profile = () => {
   const studentDetails = [
@@ -36,7 +51,7 @@ const Profile = () => {
   ];
 
   return (
-    <div className=" w-[30rem] p-4">
+    <div className="w-[30rem] p-4">
       <div className="bg-background rounded-xl shadow-lg p-6">
         <div className="flex items-center gap-4">
           <div className="rounded-full w-20 h-20 bg-muted flex items-center justify-center text-4xl font-bold">
@@ -80,3 +95,5 @@ const Profile = () => {
   );
 };
 
+
+export default Fdetails;
