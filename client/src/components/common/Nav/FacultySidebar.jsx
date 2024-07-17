@@ -40,11 +40,11 @@ const NavSection = ({ title, children }) => (
 );
 
 const FacultySidebar = () => (
-  <div className="flex sticky top-0 h-screen bg-gray-100">
+  <div className=" sticky hidden md:flex top-0 h-screen bg-gray-100">
     <aside className="w-64 flex flex-col justify-between bg-white border-r">
       <div className="flex flex-col w-full">
 
-        <div className="flex items-center justify-start px-4 h-16 border-b">
+        <div className="flex mt-3 items-center justify-start px-4 h-16 border-b">
           <Avatar name="shinjo" variant="beam" />
           <div className="ml-3">
             <h2 className="text-lg font-semibold">Yokoso CMR</h2>

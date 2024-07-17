@@ -7,7 +7,7 @@ import { IoIosNotificationsOutline } from "react-icons/io";
 import Avatar from "boring-avatars";
 const Sidebar = () => {
   return (
-    <div className=" flex h-fit   justify-between w-full px-4  mt-3 py-2 ">
+    <div className=" flex h-fit  justify-between w-full px-4  mt-3 py-2 ">
       <div className=" flex gap-3 hover:bg-slate-100 cursor-pointer px-2 pr-6 py-1.5 rounded-lg">
         {/* <Avatar name="banaki" variant="beam" /> */}
         <div className="flex flex-col items-start ">

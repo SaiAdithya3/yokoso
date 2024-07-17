@@ -8,7 +8,7 @@ const Announcements = () => {
   ];
 
   return (
-    <div className="bg-white w-[22rem] shadow-md rounded-xl p-4">
+    <div className="bg-white w-[22rem] rounded-2xl  border p-4">
       <h3 className="text-lg font-semibold mb-3">Announcements</h3>
       <div className="space-y-3">
         {announcements.map(announcement => (
