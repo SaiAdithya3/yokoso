@@ -23,9 +23,13 @@ const App = () => {
           <Route path="/f/dashboard" element={<FacultyDashboard />} />
           <Route path="/s/dashboard" element={<StudentDashboard />} />
 
+          {/* common feat For Attendence*/}
+          <Route path="/f/dashboard/attendance/:sectionName" element={<FacultyDashboard gotoAttendence={true} />} />
+
           {/* faculty feat */}
           <Route path="/f/students" element={<FStudents />} />
           <Route path='/f/students/:id' element={<Fwrapper />} />
+
 
 
           {/* student feat */}
