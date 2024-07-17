@@ -20,13 +20,25 @@ import { Button } from "@/components/ui/button";
 const students = [
   { name: "John Doe", id: "12345", email: "john.doe@example.com" },
   { name: "Emily Davis", id: "23579", email: "emily.davis@example.com" },
-  { name: "Michael Johnson", id: "34680", email: "michael.johnson@example.com" },
+  {
+    name: "Michael Johnson",
+    id: "34680",
+    email: "michael.johnson@example.com",
+  },
   { name: "Jane Smith", id: "67890", email: "jane.smith@example.com" },
-  { name: "Michael Johnson", id: "64680", email: "michael.johnson@example.com" },
+  {
+    name: "Michael Johnson",
+    id: "64680",
+    email: "michael.johnson@example.com",
+  },
   { name: "Emily Davis", id: "33579", email: "emily.davis@example.com" },
   { name: "David Lee", id: "97531", email: "david.lee@example.com" },
   { name: "Emily Davis", id: "43579", email: "emily.davis@example.com" },
-  { name: "Michael Johnson", id: "74680", email: "michael.johnson@example.com" },
+  {
+    name: "Michael Johnson",
+    id: "74680",
+    email: "michael.johnson@example.com",
+  },
 ];
 
 const timeOptions = [
@@ -54,11 +66,17 @@ export default function Component() {
           <div className="flex items-center justify-between w-full gap-4">
             <div className="flex flex-col">
               <div className="text-sm font-semibold">Select Time</div>
-              <SelectComponent placeholder="Select Time" options={timeOptions} />
+              <SelectComponent
+                placeholder="Select Time"
+                options={timeOptions}
+              />
             </div>
             <div>
               <div className="text-sm font-medium">Chapter</div>
-              <SelectComponent placeholder="Select Chapter" options={chapterOptions} />
+              <SelectComponent
+                placeholder="Select Chapter"
+                options={chapterOptions}
+              />
             </div>
             <InfoBlock title="Section" content="A" />
             <InfoBlock title="Course" content="Math 101" />
@@ -68,7 +86,11 @@ export default function Component() {
           </div>
         </div>
         <div className="h-[35rem] overflow-y-scroll">
-          <AttendanceTable students={students} attendance={attendance} setAttendance={setAttendance} />
+          <AttendanceTable
+            students={students}
+            attendance={attendance}
+            setAttendance={setAttendance}
+          />
         </div>
       </div>
       <AttendanceSummary attendance={attendance} />
@@ -124,17 +146,30 @@ function AttendanceTable({ students, attendance, setAttendance }) {
             <td className="px-4 py-3">{student.id}</td>
             <td className="px-4 py-3">{student.email}</td>
             <td className="px-4 py-3 text-center">
-              <Toggle
-                aria-label="Toggle attendance"
-                onClick={() => toggleAttendance(student.id)}
-                className={attendance[student.id] ? "bg-green-200" : "!bg-red-300"}
-              >
-                {attendance[student.id] ? (
-                  <CheckIcon className="h-5 w-5 text-primary" />
-                ) : (
-                  <XIcon className="h-5 w-5 text-primary" />
-                )}
-              </Toggle>
+              <div className=" flex gap-2">
+                <Toggle
+                  aria-label="Toggle attendance"
+                  onClick={() => toggleAttendance(student.id)}
+                  className={
+                    attendance[student.id] ? "bg-green-200" : "!bg-red-300"
+                  }
+                >
+                  {attendance[student.id] ? (
+                    <CheckIcon className="h-5 w-5 text-primary" />
+                  ) : (
+                    <XIcon className="h-5 w-5 text-primary" />
+                  )}
+                </Toggle>
+                <label className="inline-flex items-center cursor-pointer">
+                <input
+                  type="checkbox"
+                  checked={attendance[student.id]}
+                  onChange={() => toggleAttendance(student.id)}
+                  className="sr-only peer"
+                />
+                <div className={`relative w-11 h-6 bg-red-400 rounded-full peer-focus:ring-gray-100 peer-focus:outline-none peer-focus:ring-4  dark:peer-focus:ring-blue-800 peer-checked:bg-green-300 ${attendance[student.id] ? " peer-checked:after:translate-x-full" : "after:translate-x-0"} after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:bg-gray-700 dark:border-gray-600 peer-checked:after:border-white rtl:peer-checked:after:-translate-x-full`}></div>
+              </label>
+              </div>
             </td>
           </tr>
         ))}
@@ -159,7 +194,10 @@ function AttendanceSummary({ attendance }) {
         <CardContent className="grid gap-4">
           <SummaryItem label="Present" count={presentCount} />
           <SummaryItem label="Absent" count={absentCount} />
-          <SummaryItem label="Total Students" count={Object.keys(attendance).length} />
+          <SummaryItem
+            label="Total Students"
+            count={Object.keys(attendance).length}
+          />
         </CardContent>
         <CardFooter className="flex justify-end gap-2">
           <Button variant="outline">Download Report</Button>
