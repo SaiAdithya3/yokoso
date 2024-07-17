@@ -10,6 +10,7 @@ import StudentProfile from './pages/Profile/StudentProfile';
 import FacultyProfile from './pages/Profile/FacultyProfile';
 import AdminProfile from './pages/Profile/AdminProfile';
 import Fwrapper from './pages/f-students/F-SDetails/Student.Fwrapper';
+import ResultsPage from './pages/StudentFeat/ResultsPage';
 
 const App = () => {
   return (
@@ -17,11 +18,20 @@ const App = () => {
       <div className="w-full">
         <Routes>
           <Route path="/" element={<Login />} />
+          {/* dashboard pages */}
           <Route path="/a/dashboard" element={<AdminDashboard />} />
           <Route path="/f/dashboard" element={<FacultyDashboard />} />
           <Route path="/s/dashboard" element={<StudentDashboard />} />
+
+          {/* faculty feat */}
           <Route path="/f/students" element={<FStudents />} />
           <Route path='/f/students/:id' element={<Fwrapper />} />
+
+
+          {/* student feat */}
+          <Route path="/s/results" element={<ResultsPage />} />
+
+          {/* profile pages */}
           <Route path="/f/profile" element={<FacultyProfile />} />
           <Route path="/s/profile" element={<StudentProfile />} />
           <Route path="/a/profile" element={<AdminProfile />} />
