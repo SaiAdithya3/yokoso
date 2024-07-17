@@ -1,7 +1,15 @@
 import React, { useState } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 
-const Dropdown = ({ options }) => {
+const Dropdown = ({ options, sectionId }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const history = useNavigate();
+  const location = useLocation();
+
+  const handleOptionClick = (path) => {
+    history(`${location.pathname}/${path}/${sectionId}`);
+    setIsOpen(false);
+  };
 
   return (
     <div className="relative text-xs w-[14rem] inline-block text-left">
@@ -43,16 +51,16 @@ const Dropdown = ({ options }) => {
         >
           <div className="py-1" role="none">
             {options.map((option, index) => (
-              <a
+              <button
                 key={index}
-                href={option.href}
-                className="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100"
+                onClick={() => handleOptionClick(option.path)}
+                className="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 w-full text-left"
                 role="menuitem"
                 tabIndex="-1"
                 id={`menu-item-${index}`}
               >
                 {option.label}
-              </a>
+              </button>
             ))}
           </div>
         </div>
@@ -70,13 +78,13 @@ const SectionList = () => {
   ];
 
   const dropdownOptions = [
-    { label: "Mark Attendance", href: "#attendance" },
-    { label: "View Section", href: "#view" },
-    { label: "More Options", href: "#more" },
+    { label: "Mark Attendance", path: "attendance" },
+    { label: "View Section", path: "view" },
+    { label: "More Options", path: "more" },
   ];
 
   return (
-    <div className="border w-[22rem] rounded-2xl p-4   ">
+    <div className="border w-[22rem] rounded-2xl p-4">
       <div className="flex items-center justify-between border-b pb-2 mb-4">
         <h3 className="text-xl font-semibold text-gray-800">Your Sections</h3>
         <button className="border rounded-lg text-sm px-2 py-1 text-gray-600 hover:bg-gray-100 focus:outline-none">
@@ -88,10 +96,10 @@ const SectionList = () => {
           <div
             key={index}
             className="flex gap-4 w-full justify-between items-center mb-3 p-3
-             rounded-lg bg-white shadow-sm  border-gray-200"
+             rounded-lg bg-white shadow-sm border-gray-200"
           >
-            <span className="text-gray-800  font-medium">{section.name}</span>
-            <Dropdown options={dropdownOptions} />
+            <span className="text-gray-800 font-medium">{section.name}</span>
+            <Dropdown options={dropdownOptions} sectionId={section.name} />
           </div>
         ))}
       </div>
