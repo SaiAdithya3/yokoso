@@ -64,7 +64,7 @@ const StudentSidebar = () => {
             <NavItem to="/time-off" icon={ClockIcon}>
               Time Table
             </NavItem>
-            <NavItem to="/projects" icon={ProjectorIcon}>
+            <NavItem to="/s/results" icon={ProjectorIcon}>
               Exams / Results
             </NavItem>
             <NavItem to="/team" icon={GroupIcon}>
