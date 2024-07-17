@@ -2,10 +2,10 @@ import React from 'react';
 import DashboardComponent from '@/components/dashboard/Dashboard.component';
 
 
-const FacultyDashboard = () => {
+const FacultyDashboard = ({gotoAttendence}) => {
   return (
     <>
-        <DashboardComponent />
+        <DashboardComponent gotoAttendence={gotoAttendence} />
     </>
   )
 }
