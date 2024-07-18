@@ -33,12 +33,14 @@ const students = [
   },
   { name: "Emily Davis", id: "33579", email: "emily.davis@example.com" },
   { name: "David Lee", id: "97531", email: "david.lee@example.com" },
+  { name: "David Lee", id: "47531", email: "david.lee@example.com" },
   { name: "Emily Davis", id: "43579", email: "emily.davis@example.com" },
   {
     name: "Michael Johnson",
     id: "74680",
     email: "michael.johnson@example.com",
   },
+  { name: "David Lee", id: "67531", email: "david.lee@example.com" },
 ];
 
 const timeOptions = [
@@ -60,6 +62,9 @@ export default function Component() {
   );
 
   return (
+    <>
+    <div className="   w-full flex flex-col  items-start justify-center  py-5  ">
+    <p className="  text-2xl  ml-10 font-bold -mb-4">Mark Attendence for K21GX</p>
     <div className="flex flex-col lg:flex-row w-full gap-8 p-6 lg:p-8">
       <div className="flex-1 bg-background rounded-lg border">
         <div className="flex items-center justify-between px-6 py-4 border-b">
@@ -85,7 +90,7 @@ export default function Component() {
             </div>
           </div>
         </div>
-        <div className="h-[35rem] overflow-y-scroll">
+        <div className="h-[34rem] overflow-y-scroll">
           <AttendanceTable
             students={students}
             attendance={attendance}
@@ -95,6 +100,8 @@ export default function Component() {
       </div>
       <AttendanceSummary attendance={attendance} />
     </div>
+    </div>
+    </>
   );
 }
 
@@ -119,7 +126,7 @@ function InfoBlock({ title, content }) {
   return (
     <div>
       <div className="text-sm font-medium">{title}</div>
-      <div className="text-muted-foreground text-sm">{content}</div>
+      <div className="text-muted-foreground text-md mt-2 font-semibold">{content}</div>
     </div>
   );
 }
@@ -147,7 +154,7 @@ function AttendanceTable({ students, attendance, setAttendance }) {
             <td className="px-4 py-3">{student.email}</td>
             <td className="px-4 py-3 text-center">
               <div className=" flex gap-2">
-                <Toggle
+                {/* <Toggle
                   aria-label="Toggle attendance"
                   onClick={() => toggleAttendance(student.id)}
                   className={
@@ -159,7 +166,7 @@ function AttendanceTable({ students, attendance, setAttendance }) {
                   ) : (
                     <XIcon className="h-5 w-5 text-primary" />
                   )}
-                </Toggle>
+                </Toggle> */}
                 <label className="inline-flex items-center cursor-pointer">
                 <input
                   type="checkbox"

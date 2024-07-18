@@ -42,6 +42,7 @@ const App = () => {
 
           {/* student feat */}
           <Route path="/s/results" element={<ResultsPage />} />
+          <Route path='/s/dashboard/attendance' element={<StudentDashboard  gotoAttendence={true}/>} />
           <Route path="/s/assignments" element={<StudentAssignment />} />
 
           {/* profile pages */}
