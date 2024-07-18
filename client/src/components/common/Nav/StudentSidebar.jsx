@@ -58,10 +58,10 @@ const StudentSidebar = () => {
             <NavItem to="/s/dashboard" icon={LayoutDashboardIcon}>
               Dashboard
             </NavItem>
-            <NavItem to="/calendar" icon={CalendarIcon}>
-              LMS / Assignments
+            <NavItem to="/s/lms" icon={CalendarIcon}>
+              Teaching Content
             </NavItem>
-            <NavItem to="/time-off" icon={ClockIcon}>
+            <NavItem to="/" icon={ClockIcon}>
               Time Table
             </NavItem>
             <NavItem to="/s/results" icon={ProjectorIcon}>
@@ -70,19 +70,19 @@ const StudentSidebar = () => {
             <NavItem to="/team" icon={GroupIcon}>
               Attendance
             </NavItem>
-            <NavItem to="/notes" icon={StickyNoteIcon}>
-              Residential
-            </NavItem>
-            <NavItem to="/benefits" icon={FlagIcon} badge="NEW">
-              RMS
-            </NavItem>
-            <NavItem to="/documents" icon={FilesIcon}>
-              Finance
-            </NavItem>
-            <NavItem to="/s/assignments" icon={FilesIcon}>
+            <NavItem to="/s/assignments" icon={CalendarIcon}>
               Assignments
             </NavItem>
-            <NavItem to="/bank" icon={FilesIcon}>
+            <NavItem to="/" icon={StickyNoteIcon}>
+              Residential
+            </NavItem>
+            <NavItem to="/s/rms" icon={FlagIcon} badge="NEW">
+              RMS
+            </NavItem>
+            <NavItem to="/" icon={FilesIcon}>
+              Finance
+            </NavItem>
+            <NavItem to="/" icon={FilesIcon}>
               Mess
             </NavItem>
           </NavSection>
