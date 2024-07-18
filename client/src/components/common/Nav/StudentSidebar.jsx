@@ -80,15 +80,18 @@ const StudentSidebar = () => {
               <NavItem to="/s/rms" icon={FlagIcon} badge="NEW">
                 RMS
               </NavItem>
+              <NavItem to="/s/announcements" icon={ProjectorIcon} badge="NEW">
+                Announcements
+              </NavItem>
 
             </NavSection>
             <NavSection title="FAVORITES">
-              <NavItem to="/synergy-team" icon={() => <span className="w-2.5 h-2.5 bg-purple-500 rounded-full" />}>
+              {/* <NavItem to="/synergy-team" icon={() => <span className="w-2.5 h-2.5 bg-purple-500 rounded-full" />}>
                 Synergy Team
                 <Badge variant="secondary" className="ml-auto">
                   36
                 </Badge>
-              </NavItem>
+              </NavItem> */}
               <NavItem to="/monday" icon={() => <span className="w-2.5 h-2.5 bg-purple-500 rounded-full" />}>
                 Monday
                 <Badge variant="secondary" className="ml-auto">

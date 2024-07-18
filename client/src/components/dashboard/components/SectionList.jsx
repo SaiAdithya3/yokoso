@@ -7,7 +7,7 @@ const Dropdown = ({ options, sectionId }) => {
   const location = useLocation();
 
   const handleOptionClick = (path) => {
-    history(`${location.pathname}/${path}/${sectionId}`);
+    history(`${path}`);
     setIsOpen(false);
   };
 
@@ -78,9 +78,9 @@ const SectionList = () => {
   ];
 
   const dropdownOptions = [
-    { label: "Mark Attendance", path: "attendance" },
-    { label: "View Section", path: "view" },
-    { label: "More Options", path: "more" },
+    { label: "Mark Attendance", path: "attendance/a" },
+    { label: "View Section", path: "/f/students" },
+    { label: "More Options", path: "/f/dashboard" },
   ];
 
   return (

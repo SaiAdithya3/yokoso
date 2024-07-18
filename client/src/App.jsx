@@ -20,6 +20,9 @@ import Loans from './components/Library/Admin/Loans';
 import RMS from './pages/StudentFeat/RMS';
 import TeachingContent from './pages/StudentFeat/TeachingContent';
 import SubjectDetails from './pages/StudentFeat/SubjectDetails';
+import Announcements from './pages/StudentFeat/Announcements';
+import FacultyAnnouncements from './pages/StudentFeat/FacultyAnnouncements';
+import Facultylms from './pages/FacultyFeat/Facultylms';
 
 const App = () => {
   return (
@@ -40,6 +43,8 @@ const App = () => {
           <Route path='/f/students/:id' element={<Fwrapper />} />
           <Route path="/f/assignments" element={<FacultyAssignment />} />
           <Route path="/f/assignments/:id" element={<FacultyAssignmentView />} />
+          <Route path="/f/announcements" element={<FacultyAnnouncements />} />
+          <Route path="/f/lms" element={<Facultylms />} />
 
           {/* student feat */}
           <Route path="/s/results" element={<ResultsPage />} />
@@ -52,6 +57,7 @@ const App = () => {
           <Route path="/a/profile" element={<AdminProfile />} />
           <Route path="/s/rms" element={<RMS />} />
           <Route path="/s/lms" element={<TeachingContent />} />
+          <Route path="/s/announcements" element={<Announcements />} />
           <Route path="/s/lms/subject/:id" element={<SubjectDetails />} />
 
           {/* Library pages */}

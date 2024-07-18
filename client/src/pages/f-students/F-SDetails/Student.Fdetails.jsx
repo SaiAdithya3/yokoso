@@ -58,7 +58,7 @@ const Profile = () => {
             JD
           </div>
           <div>
-            <h1 className="text-2xl font-bold">John Doe</h1>
+            <h1 className="text-2xl font-bold">Darth Vader</h1>
             <div className="text-muted-foreground">
               <span>Age: 15</span>
               <span className="mx-2">|</span>
@@ -85,9 +85,6 @@ const Profile = () => {
         </div>
         <Separator className="my-6" />
         <div className="grid gap-4">
-          <Button variant="outline" className="w-full">
-            Raise Disciplinary Action
-          </Button>
           <Button className="w-full">Send Message</Button>
         </div>
       </div>

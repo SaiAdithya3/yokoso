@@ -57,22 +57,22 @@ const FacultySidebar = () => (
             <NavItem to="/f/dashboard" icon={LayoutDashboardIcon}>
               Dashboard
             </NavItem>
-            <NavItem to="/calendar" icon={CalendarIcon}>
+            <NavItem to="#" icon={CalendarIcon}>
               Calendar
             </NavItem>
-            <NavItem to="/time-off" icon={ClockIcon}>
+            <NavItem to="#" icon={ClockIcon}>
               Time Off
             </NavItem>
-            <NavItem to="/projects" icon={ProjectorIcon}>
-              Projects
+            <NavItem to="/f/lms" icon={ProjectorIcon}>
+              LMS
             </NavItem>
             <NavItem to="/f/students" icon={GroupIcon}>
               Students
             </NavItem>
-            <NavItem to="/notes" icon={StickyNoteIcon}>
-              Notes
+            <NavItem to="/f/announcements" icon={StickyNoteIcon}>
+              Announcements
             </NavItem>
-            <NavItem to="/benefits" icon={FlagIcon} badge="NEW">
+            <NavItem to="#" icon={FlagIcon} badge="NEW">
               Benefits
             </NavItem>
             <NavItem to="/f/assignments" icon={FilesIcon}>
