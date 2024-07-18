@@ -74,8 +74,8 @@ const FacultySidebar = () => (
             <NavItem to="/benefits" icon={FlagIcon} badge="NEW">
               Benefits
             </NavItem>
-            <NavItem to="/documents" icon={FilesIcon}>
-              Documents
+            <NavItem to="/f/assignments" icon={FilesIcon}>
+              Assignments
             </NavItem>
           </NavSection>
           <NavSection title="FAVORITES">

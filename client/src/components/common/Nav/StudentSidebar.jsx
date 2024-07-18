@@ -79,8 +79,8 @@ const StudentSidebar = () => {
             <NavItem to="/documents" icon={FilesIcon}>
               Finance
             </NavItem>
-            <NavItem to="/bank" icon={FilesIcon}>
-              Mess
+            <NavItem to="/s/assignments" icon={FilesIcon}>
+              Assignments
             </NavItem>
             <NavItem to="/bank" icon={FilesIcon}>
               Mess
