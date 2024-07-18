@@ -11,6 +11,9 @@ import FacultyProfile from './pages/Profile/FacultyProfile';
 import AdminProfile from './pages/Profile/AdminProfile';
 import Fwrapper from './pages/f-students/F-SDetails/Student.Fwrapper';
 import ResultsPage from './pages/StudentFeat/ResultsPage';
+import FacultyAssignment from './pages/Assigments/FacultyAssignment';
+import StudentAssignment from './pages/Assigments/StudentAssignment';
+import FacultyAssignmentView from './pages/Assigments/FacultyAssignmentView';
 
 const App = () => {
   return (
@@ -29,11 +32,12 @@ const App = () => {
           {/* faculty feat */}
           <Route path="/f/students" element={<FStudents />} />
           <Route path='/f/students/:id' element={<Fwrapper />} />
-
-
+          <Route path="/f/assignments" element={<FacultyAssignment />} />
+          <Route path="/f/assignments/:id" element={<FacultyAssignmentView />} />
 
           {/* student feat */}
           <Route path="/s/results" element={<ResultsPage />} />
+          <Route path="/s/assignments" element={<StudentAssignment />} />
 
           {/* profile pages */}
           <Route path="/f/profile" element={<FacultyProfile />} />
