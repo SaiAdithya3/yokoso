@@ -34,6 +34,7 @@ const App = () => {
 
           {/* student feat */}
           <Route path="/s/results" element={<ResultsPage />} />
+          <Route path='/s/dashboard/attendance' element={<StudentDashboard  gotoAttendence={true}/>} />
 
           {/* profile pages */}
           <Route path="/f/profile" element={<FacultyProfile />} />
