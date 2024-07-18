@@ -14,6 +14,9 @@ import ResultsPage from './pages/StudentFeat/ResultsPage';
 import FacultyAssignment from './pages/Assigments/FacultyAssignment';
 import StudentAssignment from './pages/Assigments/StudentAssignment';
 import FacultyAssignmentView from './pages/Assigments/FacultyAssignmentView';
+import AdLibrary from './pages/Library/AdLibrary';
+import Books from './components/Library/Admin/Books';
+import Loans from './components/Library/Admin/Loans';
 
 const App = () => {
   return (
@@ -43,6 +46,11 @@ const App = () => {
           <Route path="/f/profile" element={<FacultyProfile />} />
           <Route path="/s/profile" element={<StudentProfile />} />
           <Route path="/a/profile" element={<AdminProfile />} />
+
+          {/* Library pages */}
+          <Route path="/a/library" element={<AdLibrary />} />
+          <Route path="/a/library/add-loan" element={<Books />} />
+          <Route path="/a/library/return" element={<Loans />} />
         </Routes>
       </div>
     </>

@@ -9,7 +9,7 @@ const HodTasks = () => {
 
   return (
     <div className="bg-white border w-[22rem] rounded-2xl p-4">
-      <h3 className="text-lg font-semibold text-gray-800 mb-3">HOD Tasks</h3>
+      <h3 className="text-lg font-semibold text-gray-800 mb-3">My Tasks</h3>
       <div className="space-y-3">
         {tasks.map(task => (
           <div key={task.id} className="flex items-center p-3 border border-gray-200 rounded-lg bg-gray-50">
