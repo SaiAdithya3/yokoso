@@ -42,82 +42,83 @@ const NavSection = ({ title, children }) => (
 const StudentSidebar = () => {
 
   return (
-  <div className="flex sticky top-0 h-screen bg-gray-100">
-    <aside className="w-64 flex flex-col justify-between bg-white border-r">
-      <div className="flex flex-col w-full">
+    <div className="flex sticky top-0 h-screen bg-gray-100">
+      <aside className="w-64 flex flex-col justify-between bg-white border-r">
+        <div className="flex flex-col w-full">
 
-        <div className="flex items-center justify-start px-4 h-16 border-b">
-          <Avatar name="shinjo" variant="beam" />
-          <div className="ml-3">
-            <h2 className="text-lg font-semibold">Yokoso CMR</h2>
-            <p className="text-sm text-muted-foreground">Sasta UMS</p>
+          <div className="flex items-center justify-center gap-4 px-4 h-20 border-b">
+            <img
+              src="https://dhondi.ai/logos/cmr.png"
+              alt="Image"
+              className="  object-cover   bg-no-repeat w-14 h-14"
+            />
+            <h1 className="text-2xl font-bold uppercase ml-2">Yokoso </h1>
+          </div>
+          <nav className="p-4 space-y-4">
+            <NavSection title="MAIN">
+              <NavItem to="/s/dashboard" icon={LayoutDashboardIcon}>
+                Dashboard
+              </NavItem>
+              <NavItem to="/s/lms" icon={CalendarIcon}>
+                Teaching Content
+              </NavItem>
+              <NavItem to="/" icon={ClockIcon}>
+                Time Table
+              </NavItem>
+              <NavItem to="/s/results" icon={ProjectorIcon}>
+                Exams / Results
+              </NavItem>
+              <NavItem to="/s/dashboard/attendance" icon={GroupIcon}>
+                Attendance
+              </NavItem>
+              <NavItem to="/s/assignments" icon={CalendarIcon}>
+                Assignments
+              </NavItem>
+              <NavItem to="/" icon={StickyNoteIcon}>
+                Residential
+              </NavItem>
+              <NavItem to="/s/rms" icon={FlagIcon} badge="NEW">
+                RMS
+              </NavItem>
+
+            </NavSection>
+            <NavSection title="FAVORITES">
+              <NavItem to="/synergy-team" icon={() => <span className="w-2.5 h-2.5 bg-purple-500 rounded-full" />}>
+                Synergy Team
+                <Badge variant="secondary" className="ml-auto">
+                  36
+                </Badge>
+              </NavItem>
+              <NavItem to="/monday" icon={() => <span className="w-2.5 h-2.5 bg-purple-500 rounded-full" />}>
+                Monday
+                <Badge variant="secondary" className="ml-auto">
+                  36
+                </Badge>
+              </NavItem>
+
+            </NavSection>
+          </nav>
+          <div className="hidden p-4 mt-auto">
+            <NavItem to="/settings" icon={SettingsIcon}>
+              Settings
+            </NavItem>
+            <NavItem to="/support" icon={PowerIcon}>
+              Support
+            </NavItem>
           </div>
         </div>
-        <nav className="p-4 space-y-4">
-          <NavSection title="MAIN">
-            <NavItem to="/s/dashboard" icon={LayoutDashboardIcon}>
-              Dashboard
-            </NavItem>
-            <NavItem to="/s/lms" icon={CalendarIcon}>
-              Teaching Content
-            </NavItem>
-            <NavItem to="/" icon={ClockIcon}>
-              Time Table
-            </NavItem>
-            <NavItem to="/s/results" icon={ProjectorIcon}>
-              Exams / Results
-            </NavItem>
-            <NavItem to="/s/dashboard/attendance" icon={GroupIcon}>
-              Attendance
-            </NavItem>
-            <NavItem to="/s/assignments" icon={CalendarIcon}>
-              Assignments
-            </NavItem>
-            <NavItem to="/" icon={StickyNoteIcon}>
-              Residential
-            </NavItem>
-            <NavItem to="/s/rms" icon={FlagIcon} badge="NEW">
-              RMS
-            </NavItem>
-         
-          </NavSection>
-          <NavSection title="FAVORITES">
-            <NavItem to="/synergy-team" icon={() => <span className="w-2.5 h-2.5 bg-purple-500 rounded-full" />}>
-              Synergy Team
-              <Badge variant="secondary" className="ml-auto">
-                36
-              </Badge>
-            </NavItem>
-            <NavItem to="/monday" icon={() => <span className="w-2.5 h-2.5 bg-purple-500 rounded-full" />}>
-              Monday
-              <Badge variant="secondary" className="ml-auto">
-                36
-              </Badge>
-            </NavItem>
 
-          </NavSection>
-        </nav>
-        <div className="hidden p-4 mt-auto">
-          <NavItem to="/settings" icon={SettingsIcon}>
-            Settings
-          </NavItem>
-          <NavItem to="/support" icon={PowerIcon}>
-            Support
-          </NavItem>
-        </div>
-      </div>
-
-      <Link to="/profile" className={`hover:bg-zinc-100  group cursor-pointer flex items-center p-4 border-t`}>
-        <Avatar name="banaki" variant="beam" />
-        <div className="ml-3">
-          <h3 className="text-sm font-semibold">Bankai muz</h3>
-          <p className="text-xs text-muted-foreground">info@devatoms.com</p>
-        </div>
-        <HiMiniChevronRight className="text-2xl mx-2 group-hover:translate-x-2 transition-all" />
-      </Link>
-    </aside>
-  </div>
-)
+        <Link to="/profile" className={`hover:bg-zinc-100  group cursor-pointer flex items-center p-4 border-t`}>
+          <Avatar name="banaki" variant="beam" />
+          <div className="ml-3">
+            <h3 className="text-sm font-semibold">Bankai muz</h3>
+            <p className="text-xs text-muted-foreground">info@devatoms.com</p>
+          </div>
+          <HiMiniChevronRight className="text-2xl mx-2 group-hover:translate-x-2 transition-all" />
+        </Link>
+      </aside>
+    </div>
+  )
 };
 
 const CalendarIcon = (props) => (

@@ -44,12 +44,13 @@ const AdminSidebar = () => (
     <aside className="w-64 flex flex-col justify-between bg-white border-r">
       <div className="flex flex-col w-full">
 
-        <div className="flex items-center justify-start px-4 h-16 border-b">
-          <Avatar name="shinjo" variant="beam" />
-          <div className="ml-3">
-            <h2 className="text-lg font-semibold">Yokoso CMR</h2>
-            <p className="text-sm text-muted-foreground">Sasta UMS</p>
-          </div>
+        <div className="flex items-center justify-center gap-4 px-4 h-20 border-b">
+          <img
+            src="https://dhondi.ai/logos/cmr.png"
+            alt="Image"
+            className="  object-cover   bg-no-repeat w-14 h-14"
+          />
+          <h1 className="text-2xl font-bold uppercase ml-2">Yokoso </h1>
         </div>
         <nav className="p-4 space-y-4">
           <NavSection title="MAIN">

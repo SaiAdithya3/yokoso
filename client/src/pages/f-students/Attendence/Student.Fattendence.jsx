@@ -16,6 +16,8 @@ import {
   CardFooter,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbSeparator, BreadcrumbPage } from '@/components/ui/breadcrumb';
+import { Link } from 'react-router-dom';
 
 const students = [
   { name: "John Doe", id: "12345", email: "john.doe@example.com" },
@@ -63,44 +65,61 @@ export default function Component() {
 
   return (
     <>
-    <div className=" w-full flex flex-col  items-start justify-center  py-5  ">
-    <p className="  text-2xl  ml-10 font-bold -mb-4">Mark Attendence for K21GX</p>
-    <div className="flex flex-col lg:flex-row w-full gap-8 p-6 lg:p-8">
-      <div className="flex-1 bg-background rounded-lg border">
-        <div className="flex items-center justify-between px-6 py-4 border-b">
-          <div className="flex items-center justify-between w-full gap-4">
-            <div className="flex flex-col">
-              <div className="text-sm font-semibold">Select Time</div>
-              <SelectComponent
-                placeholder="Select Time"
-                options={timeOptions}
-              />
+      <div className=" w-full flex flex-col  items-start justify-center  py-5  ">
+        <Breadcrumb className="hidden md:flex px-2 pb-2">
+          <BreadcrumbList>
+            <BreadcrumbItem>
+              <BreadcrumbLink asChild>
+                <Link to={-1}>Dashboard</Link>
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbPage>Attendance</BreadcrumbPage>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbPage>Mark Attendance</BreadcrumbPage>
+            </BreadcrumbItem>
+          </BreadcrumbList>
+        </Breadcrumb>
+        <p className="  text-2xl px-2 border-b w-full text-start py-3 font-bold -mb-4">Mark Attendence for K21GX</p>
+        <div className="flex flex-col lg:flex-row w-full gap-8 p-6 lg:p-8">
+          <div className="flex-1 bg-background rounded-lg border">
+            <div className="flex items-center justify-between px-6 py-4 border-b">
+              <div className="flex items-center justify-between w-full gap-4">
+                <div className="flex flex-col">
+                  <div className="text-sm font-semibold">Select Time</div>
+                  <SelectComponent
+                    placeholder="Select Time"
+                    options={timeOptions}
+                  />
+                </div>
+                <div>
+                  <div className="text-sm font-medium">Chapter</div>
+                  <SelectComponent
+                    placeholder="Select Chapter"
+                    options={chapterOptions}
+                  />
+                </div>
+                <InfoBlock title="Section" content="A" />
+                <InfoBlock title="Course" content="Math 101" />
+                <div className="flex items-center gap-4">
+                  <InfoBlock title="Teacher" content="John Doe" />
+                </div>
+              </div>
             </div>
-            <div>
-              <div className="text-sm font-medium">Chapter</div>
-              <SelectComponent
-                placeholder="Select Chapter"
-                options={chapterOptions}
+            <div className="h-[34rem] overflow-y-scroll">
+              <AttendanceTable
+                students={students}
+                attendance={attendance}
+                setAttendance={setAttendance}
               />
-            </div>
-            <InfoBlock title="Section" content="A" />
-            <InfoBlock title="Course" content="Math 101" />
-            <div className="flex items-center gap-4">
-              <InfoBlock title="Teacher" content="John Doe" />
             </div>
           </div>
-        </div>
-        <div className="h-[34rem] overflow-y-scroll">
-          <AttendanceTable
-            students={students}
-            attendance={attendance}
-            setAttendance={setAttendance}
-          />
+          <AttendanceSummary attendance={attendance} />
         </div>
       </div>
-      <AttendanceSummary attendance={attendance} />
-    </div>
-    </div>
     </>
   );
 }
@@ -168,14 +187,14 @@ function AttendanceTable({ students, attendance, setAttendance }) {
                   )}
                 </Toggle> */}
                 <label className="inline-flex items-center cursor-pointer">
-                <input
-                  type="checkbox"
-                  checked={attendance[student.id]}
-                  onChange={() => toggleAttendance(student.id)}
-                  className="sr-only peer"
-                />
-                <div className={`relative w-11 h-6 bg-red-400 rounded-full peer-focus:ring-gray-100 peer-focus:outline-none peer-focus:ring-4  dark:peer-focus:ring-blue-800 peer-checked:bg-green-300 ${attendance[student.id] ? " peer-checked:after:translate-x-full" : "after:translate-x-0"} after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:bg-gray-700 dark:border-gray-600 peer-checked:after:border-white rtl:peer-checked:after:-translate-x-full`}></div>
-              </label>
+                  <input
+                    type="checkbox"
+                    checked={attendance[student.id]}
+                    onChange={() => toggleAttendance(student.id)}
+                    className="sr-only peer"
+                  />
+                  <div className={`relative w-11 h-6 bg-red-400 rounded-full peer-focus:ring-gray-100 peer-focus:outline-none peer-focus:ring-4  dark:peer-focus:ring-blue-800 peer-checked:bg-green-300 ${attendance[student.id] ? " peer-checked:after:translate-x-full" : "after:translate-x-0"} after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:bg-gray-700 dark:border-gray-600 peer-checked:after:border-white rtl:peer-checked:after:-translate-x-full`}></div>
+                </label>
               </div>
             </td>
           </tr>
