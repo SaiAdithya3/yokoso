@@ -55,7 +55,7 @@ const Present = () => {
     <div>
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
-          <button className="border px-4 py-2 rounded-md">
+          <button className="border bg-white px-4 py-2 rounded-md">
             {selectedMonth}
           </button>
         </DropdownMenuTrigger>
@@ -97,7 +97,7 @@ const Present = () => {
       </DropdownMenu>
       <Accordion type="single" collapsible className="w-full mt-4 flex flex-col gap-2">
         {daysInMonth[selectedMonth].map((day, index) => (
-          <AccordionItem key={index} value={`accordion-${index}`} className="border border-gray-300 px-6 rounded-xl  ">
+          <AccordionItem key={index} value={`accordion-${index}`} className="border bg-white border-gray-300 px-6 rounded-xl  ">
             <AccordionTrigger>
               <div className=" flex w-full justify-between">
                 <p>{day}</p>

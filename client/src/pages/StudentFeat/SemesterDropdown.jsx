@@ -18,7 +18,7 @@ const SemesterDropdown = ({ selectedSemester, onSelectSemester }) => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <button className="border border-zinc-300 px-4 py-2 rounded-md flex items-center gap-2">
+        <button className="border bg-white/70 border-zinc-300 px-4 py-2 rounded-md flex items-center gap-2">
           {selectedSemester}
           <FaChevronDown className="ml-2 text-gray-500" />
         </button>
