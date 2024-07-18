@@ -3,11 +3,17 @@ import StudentSidebar from '@/components/common/Nav/StudentSidebar';
 import SemesterDropdown from './SemesterDropdown';
 import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbSeparator, BreadcrumbPage } from '@/components/ui/breadcrumb';
 import { Link } from 'react-router-dom';
+import {
+  Accordion,
+  AccordionItem,
+  AccordionTrigger,
+  AccordionContent,
+} from "@/components/ui/accordion";
+import cloud from '@/assets/server.png';
 
 const TeachingContent = () => {
   const [selectedSubject, setSelectedSubject] = useState(null);
   const [selectedSemester, setSelectedSemester] = useState("Semester 1");
-
 
   // Sample data for subjects
   const subjects = [
@@ -15,33 +21,45 @@ const TeachingContent = () => {
       id: 1,
       courseID: 'CSE101',
       courseName: 'Introduction to Computer Science',
-      lecturer: 'Dr. John Doe',
-      syllabusLink: '/path/to/syllabus.pdf',
-      notesLink: '/path/to/notes.pdf',
-      chapters: [
-        { id: 1, name: 'Introduction to Programming' },
-        { id: 2, name: 'Data Structures' },
-        { id: 3, name: 'Algorithms' },
-      ],
-      instructionPlanLink: '/path/to/instruction_plan.pdf',
-      // Add more fields as needed
+      color: 'bg-blue-200',
+      border: 'border-blue-400',
     },
     {
       id: 2,
       courseID: 'MEC102',
       courseName: 'Mechanical Engineering Basics',
-      lecturer: 'Prof. Jane Smith',
-      syllabusLink: '/path/to/syllabus_mec102.pdf',
-      notesLink: '/path/to/notes_mec102.pdf',
-      chapters: [
-        { id: 1, name: 'Introduction to Mechanics' },
-        { id: 2, name: 'Thermodynamics' },
-        { id: 3, name: 'Fluid Mechanics' },
-      ],
-      instructionPlanLink: '/path/to/instruction_plan_mec102.pdf',
-      // Add more fields as needed
+      image: 'https://www.flaticon.com/free-icons/server',
+      color: 'bg-red-200',
+      border: 'border-red-400',
     },
-    // Add more subjects as needed
+    {
+      id: 3,
+      courseID: 'CSE201',
+      courseName: 'Data Structures and Algorithms',
+      color: 'bg-green-200',
+      border: 'border-green-400',
+    },
+    {
+      id: 4,
+      courseID: 'CSE301',
+      courseName: 'Operating Systems',
+      color: 'bg-yellow-200',
+      border: 'border-yellow-400',
+    },
+    {
+      id: 5,
+      courseID: 'CSE401',
+      courseName: 'Machine Learning',
+      color: 'bg-purple-200',
+      border: 'border-purple-400',
+    },
+    {
+      id: 6,
+      courseID: 'CSE501',
+      courseName: 'Artificial Intelligence',
+      color: 'bg-pink-200',
+      border: 'border-pink-400',
+    },
   ];
 
   // Function to handle click on a subject
@@ -67,67 +85,20 @@ const TeachingContent = () => {
           </BreadcrumbList>
         </Breadcrumb>
         <h1 className="text-3xl font-semibold mb-6 border-b p pb-6">Teaching Content</h1>
-        <div className="popp flex w-full border rounded-xl m-2 p-3 bg-zinc-50 items-center justify-center gap-3">
-          <p className="text-lg font-">Select a subject to view details :</p>
+        <div className="flex w-full border rounded-xl m-2 p-3 bg-zinc-50 items-center justify-between gap-3">
+          <p className="text-lg font-semibold">Select a subject to view details:</p>
           <SemesterDropdown selectedSemester={selectedSemester} onSelectSemester={setSelectedSemester} />
         </div>
 
-        {subjects.map((subject) => (
-          <div key={subject.id} className="bg-white shadow rounded-lg mb-4">
-            <div
-              className="p-4 cursor-pointer flex justify-between items-center"
-              onClick={() => handleSubjectClick(subject)}
-            >
-              <div>
-                <h2 className="text-lg font-semibold">{subject.courseName}</h2>
-                <p className="text-sm text-gray-600">{subject.courseID}</p>
-              </div>
-              <svg
-                className={`h-6 w-6 ${selectedSubject === subject ? 'transform rotate-180' : ''}`}
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <polyline points="6 9 12 15 18 9"></polyline>
-              </svg>
-            </div>
-            {selectedSubject === subject && (
-              <div className="p-4">
-                <p className="text-sm text-gray-700 mb-4">Lecturer: {subject.lecturer}</p>
-                <div className="mb-4">
-                  <p className="text-sm text-gray-700 font-semibold">Chapters:</p>
-                  <ul className="pl-4">
-                    {subject.chapters.map((chapter) => (
-                      <li key={chapter.id} className="text-sm text-gray-600">{chapter.name}</li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="mb-4">
-                  <p className="text-sm text-gray-700 font-semibold">Download Links:</p>
-                  <ul className="pl-4">
-                    <li className="text-sm text-blue-500 cursor-pointer hover:underline">
-                      <a href={subject.syllabusLink} target="_blank" rel="noopener noreferrer">Syllabus</a>
-                    </li>
-                    <li className="text-sm text-blue-500 cursor-pointer hover:underline">
-                      <a href={subject.notesLink} target="_blank" rel="noopener noreferrer">Notes</a>
-                    </li>
-                    {/* Add more download links as needed */}
-                  </ul>
-                </div>
-                <div>
-                  <p className="text-sm text-gray-700 font-semibold">Instruction Plan:</p>
-                  <p className="text-sm text-blue-500 cursor-pointer hover:underline">
-                    <a href={subject.instructionPlanLink} target="_blank" rel="noopener noreferrer">View Instruction Plan</a>
-                  </p>
-                </div>
-              </div>
-            )}
-          </div>
-        ))}
+        <div className="w-full flex flex-wrap justify-evenly p-6 gap-4">
+          {subjects.map((subject) => (
+            <Link to={`/s/lms/subject/${subject.id}`} key={subject.id} className={`flex hover:scale-105 transition-all flex-col items-center gap-2 w-1/4 border-2 cursor-pointer rounded-xl mb-4 p-6 ${subject.color} ${subject.border}`}>
+              <img src={cloud} alt="server" className="w-20 h-20 mx-auto mt-4" />
+              <h2 className="text-2xl font-semibold text-center">{subject.courseID}</h2>
+              <p className="text-md text-center">{subject.courseName}</p>
+            </Link>
+          ))}
+        </div>
       </div>
     </div>
   );

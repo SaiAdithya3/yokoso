@@ -12,7 +12,7 @@ const Dropdown = ({ options, sectionId }) => {
   };
 
   return (
-    <div className="relative text-xs w-[14rem] inline-block text-left">
+    <div className="relative text-xs inline-block text-left">
       <div>
         <button
           type="button"
@@ -71,10 +71,10 @@ const Dropdown = ({ options, sectionId }) => {
 
 const SectionList = () => {
   const sections = [
-    { name: "K21safFK", id: 1 },
-    { name: "K21safJI", id: 2 },
-    { name: "K21safLM", id: 3 },
-    { name: "K21asfGP", id: 4 },
+    { name: "Section A", id: 1 },
+    { name: "Section B", id: 2 },
+    { name: "Section C", id: 3 },
+    { name: "Section D", id: 4 },
   ];
 
   const dropdownOptions = [

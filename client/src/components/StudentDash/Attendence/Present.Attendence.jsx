@@ -44,7 +44,7 @@ const Present = () => {
 
   const handleMonthSelect = (month) => {
     setSelectedMonth(month);
-    setOpenAccordion(null); // Close any open accordion when changing month
+    setOpenAccordion(null); 
   };
 
   const toggleAccordion = (index) => {

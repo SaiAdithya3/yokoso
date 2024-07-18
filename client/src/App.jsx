@@ -19,6 +19,7 @@ import Books from './components/Library/Admin/Books';
 import Loans from './components/Library/Admin/Loans';
 import RMS from './pages/StudentFeat/RMS';
 import TeachingContent from './pages/StudentFeat/TeachingContent';
+import SubjectDetails from './pages/StudentFeat/SubjectDetails';
 
 const App = () => {
   return (
@@ -51,6 +52,7 @@ const App = () => {
           <Route path="/a/profile" element={<AdminProfile />} />
           <Route path="/s/rms" element={<RMS />} />
           <Route path="/s/lms" element={<TeachingContent />} />
+          <Route path="/s/lms/subject/:id" element={<SubjectDetails />} />
 
           {/* Library pages */}
           <Route path="/a/library" element={<AdLibrary />} />

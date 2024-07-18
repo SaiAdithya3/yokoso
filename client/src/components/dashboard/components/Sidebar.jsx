@@ -5,9 +5,10 @@ import { LuPlus } from "react-icons/lu";
 import { IoIosNotificationsOutline } from "react-icons/io";
 
 import Avatar from "boring-avatars";
+import { Input } from "@/components/ui/input";
 const Sidebar = () => {
   return (
-    <div className=" flex h-fit  justify-between w-full px-4  mt-3 py-2 ">
+    <div className=" flex h-fit items-center justify-between w-full px-4  mt-3 py-2 ">
       <div className=" flex gap-3 hover:bg-slate-100 cursor-pointer px-2 pr-6 py-1.5 rounded-lg">
         {/* <Avatar name="banaki" variant="beam" /> */}
         <div className="flex flex-col items-start ">
@@ -15,6 +16,7 @@ const Sidebar = () => {
           <h3 className="text-slate-500 text-xs font-light">  Welcome back to Yokoso </h3>
         </div>
       </div>
+      <input type="text" placeholder="Search students" className="border focus:outline-none focus:ring-2 rounded-lg w-1/3 px-6 bg-zinc-50 border-black/40 popp py-1" />
       <div className=" flex items-center gap-6 ">
         {/* icons  */}
         <div className=" flex  gap-4">

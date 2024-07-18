@@ -68,7 +68,7 @@ const Books = () => {
               </Button>
             </div>
           </div>
-          <div className="overflow-x-auto">
+          <div className=" px-10 pb-10 overflow-x-auto">
             <Table className="w-full  border rounded-lg shadow-md">
               <TableHeader className="bg-black text-white">
                 <TableRow>

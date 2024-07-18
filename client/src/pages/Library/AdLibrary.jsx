@@ -7,7 +7,7 @@ const AdLibrary = () => {
     <>
       <div className="flex gap-4">
         <AdminSidebar />
-        <div className="flex w-full">
+        <div className="flex p-8 w-full">
           <AdminPage />
         </div>
       </div>
