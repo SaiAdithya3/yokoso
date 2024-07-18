@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import StudentSidebar from '@/components/common/Nav/StudentSidebar';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from '@/components/ui/breadcrumb';
+import { Link } from 'react-router-dom';
 
 const RMS = () => {
     const [requests, setRequests] = useState([
@@ -40,7 +41,7 @@ const RMS = () => {
     const logRequest = () => {
         const id = requests.length + 1;
         const date = new Date().toLocaleDateString();
-        const status = 'Opened'; 
+        const status = 'Opened';
         const request = { ...newRequest, id, date, status };
 
         setRequests([...requests, request]);
@@ -66,6 +67,19 @@ const RMS = () => {
             <StudentSidebar />
 
             <div className="w-full p-4">
+                <Breadcrumb className="hidden md:flex px-2 pb-2">
+                    <BreadcrumbList>
+                        <BreadcrumbItem>
+                            <BreadcrumbLink asChild>
+                                <Link to={-1}>Dashboard</Link>
+                            </BreadcrumbLink>
+                        </BreadcrumbItem>
+                        <BreadcrumbSeparator />
+                        <BreadcrumbItem>
+                            <BreadcrumbPage>RMS</BreadcrumbPage>
+                        </BreadcrumbItem>
+                    </BreadcrumbList>
+                </Breadcrumb>
                 <div className="flex justify-between items-center mb-6 px-2 py-2 pb-4 border-b">
                     <h1 className="text-3xl font-semibold">Relationship Management System</h1>
                     <button onClick={toggleModal} className="px-4 py-2 bg-zinc-900 text-white rounded-lg shadow hover:bg-zinc-950 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">Log New Request</button>

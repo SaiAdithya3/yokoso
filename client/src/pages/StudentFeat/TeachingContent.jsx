@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import StudentSidebar from '@/components/common/Nav/StudentSidebar';
 import SemesterDropdown from './SemesterDropdown';
+import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbSeparator, BreadcrumbPage } from '@/components/ui/breadcrumb';
+import { Link } from 'react-router-dom';
 
 const TeachingContent = () => {
   const [selectedSubject, setSelectedSubject] = useState(null);
@@ -51,6 +53,19 @@ const TeachingContent = () => {
     <div className="flex gap-4">
       <StudentSidebar />
       <div className="w-full p-4">
+        <Breadcrumb className="hidden md:flex px-2 pb-2">
+          <BreadcrumbList>
+            <BreadcrumbItem>
+              <BreadcrumbLink asChild>
+                <Link to={-1}>Dashboard</Link>
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbPage>Teaching Outcomes</BreadcrumbPage>
+            </BreadcrumbItem>
+          </BreadcrumbList>
+        </Breadcrumb>
         <h1 className="text-3xl font-semibold mb-6 border-b p pb-6">Teaching Content</h1>
         <div className="popp flex w-full border rounded-xl m-2 p-3 bg-zinc-50 items-center justify-center gap-3">
           <p className="text-lg font-">Select a subject to view details :</p>

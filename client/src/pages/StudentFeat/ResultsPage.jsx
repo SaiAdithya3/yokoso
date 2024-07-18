@@ -18,13 +18,15 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { ChartContainer } from '@/components/ui/chart';
+import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbSeparator, BreadcrumbPage } from '@/components/ui/breadcrumb';
+import { Link } from 'react-router-dom';
 
 const cgpa = 7.8;
 
 const getCGPAColor = (cgpa) => {
   if (cgpa > 7.5) return '#22c55e';
-  if (cgpa > 5.0) return '#eab308'; 
-  return '#ef4444'; 
+  if (cgpa > 5.0) return '#eab308';
+  return '#ef4444';
 };
 
 const chartData = [
@@ -46,6 +48,19 @@ const ResultsPage = () => {
     <div className="flex gap-4 min-h-screen bg-gray-50">
       <StudentSidebar />
       <div className="flex gap-4 flex-col p-4 w-full">
+        <Breadcrumb className="hidden md:flex px-2 pb-2">
+          <BreadcrumbList>
+            <BreadcrumbItem>
+              <BreadcrumbLink asChild>
+                <Link to={-1}>Dashboard</Link>
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbPage>Results</BreadcrumbPage>
+            </BreadcrumbItem>
+          </BreadcrumbList>
+        </Breadcrumb>
         <h1 className="text-3xl font-semibold sticky top-0 bg-gray-50/40 w-full border-b border-gray-100 backdrop-blur-md p-3">Results</h1>
         <div className="w-full flex gap-5">
           <div className="w-1/3 rounded-xl flex items-center justify-center bg-white">
