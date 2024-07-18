@@ -79,12 +79,7 @@ const StudentSidebar = () => {
             <NavItem to="/s/rms" icon={FlagIcon} badge="NEW">
               RMS
             </NavItem>
-            <NavItem to="/" icon={FilesIcon}>
-              Finance
-            </NavItem>
-            <NavItem to="/" icon={FilesIcon}>
-              Mess
-            </NavItem>
+         
           </NavSection>
           <NavSection title="FAVORITES">
             <NavItem to="/synergy-team" icon={() => <span className="w-2.5 h-2.5 bg-purple-500 rounded-full" />}>
