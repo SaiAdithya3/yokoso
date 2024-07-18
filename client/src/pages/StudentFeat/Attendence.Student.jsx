@@ -1,8 +1,4 @@
-/**
- * v0 by Vercel.
- * @see https://v0.dev/t/86AJO5dHv04
- * Documentation: https://v0.dev/docs#integrating-generated-code-into-your-nextjs-app
- */
+
 import {
     Breadcrumb,
     BreadcrumbList,
@@ -48,7 +44,7 @@ import {
     };
     return (
       <>
-        <div className="flex flex-col w-full min-h-screen bg-muted/40">
+        <div className="flex flex-col w-full pb-10 px-6 min-h-screen bg-muted/40">
           <div className="border-b mt-8 flex  flex-col gap-5">
             <div className=" flex  w-full justify-between px-4">
   

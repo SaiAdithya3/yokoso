@@ -63,7 +63,7 @@ export default function Component() {
 
   return (
     <>
-    <div className="   w-full flex flex-col  items-start justify-center  py-5  ">
+    <div className=" w-full flex flex-col  items-start justify-center  py-5  ">
     <p className="  text-2xl  ml-10 font-bold -mb-4">Mark Attendence for K21GX</p>
     <div className="flex flex-col lg:flex-row w-full gap-8 p-6 lg:p-8">
       <div className="flex-1 bg-background rounded-lg border">

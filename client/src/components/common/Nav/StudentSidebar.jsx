@@ -67,7 +67,7 @@ const StudentSidebar = () => {
             <NavItem to="/s/results" icon={ProjectorIcon}>
               Exams / Results
             </NavItem>
-            <NavItem to="/team" icon={GroupIcon}>
+            <NavItem to="/s/dashboard/attendance" icon={GroupIcon}>
               Attendance
             </NavItem>
             <NavItem to="/s/assignments" icon={CalendarIcon}>

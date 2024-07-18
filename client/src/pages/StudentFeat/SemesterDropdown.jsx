@@ -8,7 +8,7 @@ const semesters = [
 ];
 
 const SemesterDropdown = ({ selectedSemester, onSelectSemester }) => {
-  const [showResults, setShowResults] = useState(true); // Example state for results visibility
+  const [showResults, setShowResults] = useState(true); 
 
   const handleSemesterSelect = (semester) => {
     onSelectSemester(semester);
