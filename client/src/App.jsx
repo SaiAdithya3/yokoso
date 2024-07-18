@@ -11,6 +11,9 @@ import FacultyProfile from './pages/Profile/FacultyProfile';
 import AdminProfile from './pages/Profile/AdminProfile';
 import Fwrapper from './pages/f-students/F-SDetails/Student.Fwrapper';
 import ResultsPage from './pages/StudentFeat/ResultsPage';
+import AdLibrary from './pages/Library/AdLibrary';
+import Books from './components/Library/Admin/Books';
+import Loans from './components/Library/Admin/Loans';
 
 const App = () => {
   return (
@@ -39,6 +42,11 @@ const App = () => {
           <Route path="/f/profile" element={<FacultyProfile />} />
           <Route path="/s/profile" element={<StudentProfile />} />
           <Route path="/a/profile" element={<AdminProfile />} />
+
+          {/* Library pages */}
+          <Route path="/a/library" element={<AdLibrary />} />
+          <Route path="/a/library/add-loan" element={<Books />} />
+          <Route path="/a/library/return" element={<Loans />} />
         </Routes>
       </div>
     </>
