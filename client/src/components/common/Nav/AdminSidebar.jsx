@@ -80,7 +80,7 @@ const AdminSidebar = () => (
               Library
             </NavItem>
           </NavSection>
-          <NavSection title="FAVORITES">
+          {/* <NavSection title="FAVORITES">
             <NavItem to="/synergy-team" icon={() => <span className="w-2.5 h-2.5 bg-purple-500 rounded-full" />}>
               Synergy Team
               <Badge variant="secondary" className="ml-auto">
@@ -99,7 +99,7 @@ const AdminSidebar = () => (
                 36
               </Badge>
             </NavItem>
-          </NavSection>
+          </NavSection> */}
         </nav>
         <div className="hidden p-4 mt-auto">
           <NavItem to="/settings" icon={SettingsIcon}>

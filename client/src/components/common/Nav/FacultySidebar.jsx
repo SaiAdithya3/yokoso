@@ -57,12 +57,12 @@ const FacultySidebar = () => (
             <NavItem to="/f/dashboard" icon={LayoutDashboardIcon}>
               Dashboard
             </NavItem>
-            <NavItem to="#" icon={CalendarIcon}>
-              Calendar
+            <NavItem to="/f/dashboard/attendance/a" icon={CalendarIcon}>
+              Attendance
             </NavItem>
-            <NavItem to="#" icon={ClockIcon}>
-              Time Off
-            </NavItem>
+            {/* <NavItem to="#" icon={ClockIcon}>
+              Your Sections
+            </NavItem> */}
             <NavItem to="/f/lms" icon={ProjectorIcon}>
               LMS
             </NavItem>
@@ -72,14 +72,14 @@ const FacultySidebar = () => (
             <NavItem to="/f/announcements" icon={StickyNoteIcon}>
               Announcements
             </NavItem>
-            <NavItem to="#" icon={FlagIcon} badge="NEW">
+            {/* <NavItem to="#" icon={FlagIcon} badge="NEW">
               Benefits
-            </NavItem>
+            </NavItem> */}
             <NavItem to="/f/assignments" icon={FilesIcon}>
               Assignments
             </NavItem>
           </NavSection>
-          <NavSection title="FAVORITES">
+          {/* <NavSection title="FAVORITES">
             <NavItem to="/monday" icon={() => <span className="w-2.5 h-2.5 bg-purple-500 rounded-full" />}>
               Monday
               <Badge variant="secondary" className="ml-auto">
@@ -92,7 +92,7 @@ const FacultySidebar = () => (
                 36
               </Badge>
             </NavItem>
-          </NavSection>
+          </NavSection> */}
         </nav>
         <div className="hidden p-4 mt-auto">
           <NavItem to="/settings" icon={SettingsIcon}>
