@@ -11,7 +11,9 @@ const Icon = ({ IconComponent, ...props }) => (
 const NavItem = ({ to, icon: IconComponent, children, badge }) => {
   const location = useLocation();
   const isActive = location.pathname === to;
-  const activeClass = isActive ? "text-zinc-50 px-4 bg-black hover:text-black" : "text-muted-foreground";
+  const activeClass = isActive
+    ? "text-zinc-50 px-4 bg-black hover:text-black"
+    : "text-muted-foreground";
 
   return (
     <li>
@@ -43,7 +45,6 @@ const FacultySidebar = () => (
   <div className=" sticky hidden md:flex top-0 h-screen bg-gray-100">
     <aside className="w-64 flex flex-col justify-between bg-white border-r">
       <div className="flex flex-col w-full">
-
         <div className="flex items-center justify-center gap-4 px-4 h-20 border-b">
           <img
             src="https://dhondi.ai/logos/cmr.png"
@@ -104,7 +105,10 @@ const FacultySidebar = () => (
         </div>
       </div>
 
-      <Link to="/f/profile" className="hover:bg-zinc-100 group cursor-pointer flex items-center p-4 border-t">
+      <Link
+        to="/f/profile"
+        className="hover:bg-zinc-100 group cursor-pointer flex items-center p-4 border-t"
+      >
         <Avatar name="banaki" variant="beam" />
         <div className="ml-3">
           <h3 className="text-sm font-semibold">Chaitanya</h3>

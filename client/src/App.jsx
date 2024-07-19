@@ -28,6 +28,7 @@ import StudentManagement from './pages/AdminFeat/StudentManagement';
 import StaffManagement from './pages/AdminFeat/StaffManagement';
 import TimeTableManagement from './pages/AdminFeat/TimeTableManagement';
 import AdmissionManagement from './pages/AdminFeat/AdmissionManagement';
+import Alumni from './pages/alumni/Index';
 
 const App = () => {
   return (
@@ -77,6 +78,9 @@ const App = () => {
           <Route path="/f/library" element={<AdLibrary bankai />} />
           <Route path="/a/library/add-loan" element={<Books />} />
           <Route path="/a/library/return" element={<Loans />} />
+
+          {/* Alumni */}
+          <Route path="/s/alumni" element={<Alumni/>} />
         </Routes>
       </div>
     </>
