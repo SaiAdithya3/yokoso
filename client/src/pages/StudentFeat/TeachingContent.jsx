@@ -10,6 +10,8 @@ import {
   AccordionContent,
 } from "@/components/ui/accordion";
 import cloud from '@/assets/server.png';
+import binary from '@/assets/binary.png';
+import db from '@/assets/database-storage.png';
 
 const TeachingContent = () => {
   const [selectedSubject, setSelectedSubject] = useState(null);
@@ -23,12 +25,13 @@ const TeachingContent = () => {
       courseName: 'Introduction to Computer Science',
       color: 'bg-blue-200',
       border: 'border-blue-400',
+      image: binary,
     },
     {
       id: 2,
       courseID: 'MEC102',
       courseName: 'Mechanical Engineering Basics',
-      image: 'https://www.flaticon.com/free-icons/server',
+      image: cloud,
       color: 'bg-red-200',
       border: 'border-red-400',
     },
@@ -38,6 +41,7 @@ const TeachingContent = () => {
       courseName: 'Data Structures and Algorithms',
       color: 'bg-green-200',
       border: 'border-green-400',
+      image: db,
     },
     {
       id: 4,
@@ -45,6 +49,7 @@ const TeachingContent = () => {
       courseName: 'Operating Systems',
       color: 'bg-yellow-200',
       border: 'border-yellow-400',
+      image: cloud,
     },
     {
       id: 5,
@@ -52,6 +57,7 @@ const TeachingContent = () => {
       courseName: 'Machine Learning',
       color: 'bg-purple-200',
       border: 'border-purple-400',
+      image: db,
     },
     {
       id: 6,
@@ -59,6 +65,7 @@ const TeachingContent = () => {
       courseName: 'Artificial Intelligence',
       color: 'bg-pink-200',
       border: 'border-pink-400',
+      image: binary,
     },
   ];
 
@@ -93,7 +100,7 @@ const TeachingContent = () => {
         <div className="w-full flex flex-wrap justify-evenly p-6 gap-4">
           {subjects.map((subject) => (
             <Link to={`/s/lms/subject/${subject.id}`} key={subject.id} className={`flex hover:scale-105 transition-all flex-col items-center gap-2 w-1/4 border-2 cursor-pointer rounded-xl mb-4 p-6 ${subject.color} ${subject.border}`}>
-              <img src={cloud} alt="server" className="w-20 h-20 mx-auto mt-4" />
+              <img src={subject.image} alt="server" className="w-20 h-20 mx-auto mt-4" />
               <h2 className="text-2xl font-semibold text-center">{subject.courseID}</h2>
               <p className="text-md text-center">{subject.courseName}</p>
             </Link>

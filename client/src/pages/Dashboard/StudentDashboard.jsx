@@ -6,6 +6,7 @@ import { useLocation } from 'react-router-dom';
 import Student from '../StudentFeat/Attendence.Student';
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from '@/components/ui/breadcrumb';
 import { MdNotifications } from 'react-icons/md';
+import { CiSearch } from 'react-icons/ci';
 import { AlignHorizontalSpaceAroundIcon } from 'lucide-react';
 
 const StudentDashboard = ({ gotoAttendence }) => {
@@ -35,7 +36,10 @@ const StudentDashboard = ({ gotoAttendence }) => {
                 </BreadcrumbList>
               </Breadcrumb>
               <div className="flex space-x-4 popp">
-                <input type="text" placeholder="Search" className="border bg-white border-zinc-200 px-4 py-2 rounded-lg" />
+                <div className="flex gap-1 py-1  items-center rounded-lg px-2 bg-zinc-50 border-zinc-200 border">
+                  <CiSearch className=" text-2xl text-slate-900" />
+                  <input type="text" placeholder="Search students" className=" focus:outline-none  rounded-lg w-full  bg-zinc-50 border-black/40 popp py-1" />
+                </div>
                 <button className="bg-zinc-50 shadow text-black relative px-2 py-2 rounded-lg">
                   <span className="absolute text-xs -top-2 -right-2 bg-red-500 text-white px-2 py-1 rounded-full">2</span>
                   <MdNotifications className='text-2xl' />
