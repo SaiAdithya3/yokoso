@@ -11,7 +11,7 @@ const GeneralDetails = () => {
           <button className="bg-zinc-900 text-zinc-100 popp text-sm px-4 py-1.5 rounded-md">Request Edit</button>
           {/* <Button className=''>Request Edit</Button> */}
         </div>
-        <div className="flex w-full items-start justify-between">
+        <div className=" flex w-full items-start justify-between">
           <div className="left w-1/4 flex flex-col gap-3 items-center popp">
             <Avatar size={100} name="barackoba" variant="beam" className="rounded-full" />
             <label className="text-zinc-900 font-semibold text-md">ID : 847596812</label>
