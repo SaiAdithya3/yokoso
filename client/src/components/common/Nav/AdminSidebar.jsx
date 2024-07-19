@@ -58,19 +58,19 @@ const AdminSidebar = () => (
               Dashboard
             </NavItem>
             <NavItem to="/calendar" icon={CalendarIcon}>
-              Calendar
+              Admission Management
             </NavItem>
             <NavItem to="/time-off" icon={ClockIcon}>
-              Time Off
+              Student Management
             </NavItem>
             <NavItem to="/projects" icon={ProjectorIcon}>
-              Projects
+              Staff Management
             </NavItem>
             <NavItem to="/team" icon={GroupIcon}>
-              Team
+              TimeTable Management
             </NavItem>
             <NavItem to="/notes" icon={StickyNoteIcon}>
-              Notes
+              Announcements
             </NavItem>
             <NavItem to="/benefits" icon={FlagIcon} badge="NEW">
               Benefits

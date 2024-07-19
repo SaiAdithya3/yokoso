@@ -51,6 +51,9 @@ const App = () => {
           <Route path='/s/dashboard/attendance' element={<StudentDashboard  gotoAttendence={true}/>} />
           <Route path="/s/assignments" element={<StudentAssignment />} />
 
+          {/* admin feat */}
+          <Route path="/a/managesections" element={<FStudents />} />
+
           {/* profile pages */}
           <Route path="/f/profile" element={<FacultyProfile />} />
           <Route path="/s/profile" element={<StudentProfile />} />
