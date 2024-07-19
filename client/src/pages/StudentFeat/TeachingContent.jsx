@@ -75,25 +75,27 @@ const TeachingContent = () => {
   };
 
   return (
-    <div className="flex gap-4">
+    <div className="flex gap-4 bg-slate-100">
       <StudentSidebar />
       <div className="w-full p-4">
-        <Breadcrumb className="hidden md:flex px-2 pb-2">
-          <BreadcrumbList>
-            <BreadcrumbItem>
-              <BreadcrumbLink asChild>
-                <Link to={-1}>Dashboard</Link>
-              </BreadcrumbLink>
-            </BreadcrumbItem>
-            <BreadcrumbSeparator />
-            <BreadcrumbItem>
-              <BreadcrumbPage>Teaching Outcomes</BreadcrumbPage>
-            </BreadcrumbItem>
-          </BreadcrumbList>
-        </Breadcrumb>
-        <h1 className="text-3xl font-semibold mb-6 border-b p pb-6">Teaching Content</h1>
-        <div className="flex w-full border rounded-xl m-2 p-3 bg-zinc-50 items-center justify-between gap-3">
-          <p className="text-lg font-semibold">Select a subject to view details:</p>
+        <div className="flex flex-col sticky top-0 bg-slate-100/50 backdrop-blur-sm">
+          <Breadcrumb className="hidden md:flex px-2 pb-2">
+            <BreadcrumbList>
+              <BreadcrumbItem>
+                <BreadcrumbLink asChild>
+                  <Link to={-1}>Dashboard</Link>
+                </BreadcrumbLink>
+              </BreadcrumbItem>
+              <BreadcrumbSeparator />
+              <BreadcrumbItem>
+                <BreadcrumbPage>Teaching Outcomes</BreadcrumbPage>
+              </BreadcrumbItem>
+            </BreadcrumbList>
+          </Breadcrumb>
+          <h1 className="text-3xl font-semibold mb-6 border-b p pb-6">Teaching Content</h1>
+        </div>
+        <div className="flex w-full border rounded-xl m-2 p-3 px-8 bg-white items-center justify-between gap-3">
+          <h1 className="text-lg font-semibold">Select a subject to view details:</h1>
           <SemesterDropdown selectedSemester={selectedSemester} onSelectSemester={setSelectedSemester} />
         </div>
 
