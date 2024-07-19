@@ -74,6 +74,7 @@ const App = () => {
 
           {/* Library pages */}
           <Route path="/a/library" element={<AdLibrary />} />
+          <Route path="/f/library" element={<AdLibrary bankai />} />
           <Route path="/a/library/add-loan" element={<Books />} />
           <Route path="/a/library/return" element={<Loans />} />
         </Routes>
