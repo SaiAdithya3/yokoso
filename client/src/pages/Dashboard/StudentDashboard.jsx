@@ -17,6 +17,7 @@ import { AlignHorizontalSpaceAroundIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
+import MessagesCard from "@/components/StudentDash/Attendence/MessageCard";
 
 const StudentDashboard = ({ gotoAttendence }) => {
   const location = useLocation();
@@ -78,8 +79,8 @@ const StudentDashboard = ({ gotoAttendence }) => {
                 <CiSearch className="text-2xl text-slate-900" />
                 <Input
                   type="text"
-                  placeholder="Search students"
-                  className="focus:outline-none rounded-lg w-full bg-zinc-50 border-black/40 popp py-1"
+                  placeholder="Search...."
+                  className="focus:outline-none   w-64 bg-zinc-50  popp "
                 />
               </div>
               <Button variant="secondary" className="relative">
@@ -105,7 +106,7 @@ const StudentDashboard = ({ gotoAttendence }) => {
               >
                 <CardContent>
                   <CardTitle className="text-4xl mt-2 font-bold py-2">
-                    Hi, Sung Jun woo 👋
+                    Hi, Pavan Kumar 👋
                   </CardTitle>
                   <h1 className="text-2xl  mb-1 font-semibold">
                     Welcome to the new semester! 🎉
@@ -160,51 +161,9 @@ const StudentDashboard = ({ gotoAttendence }) => {
                   </CardContent>
                 </Card>
               </div>
-              <div className="w-7/12">
-                <Card className="  border-2 bg-white  border-zinc-50 shadow-lg  rounded-2xl">
-                  <CardHeader>
-                    <CardTitle className="text-2xl font-semibold ">
-                      Recent Assignments
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-3 -mt-2">
-                    {/*  assignments list */}
-                    <div className="flex justify-between items-center p-3 bg-gray-100 rounded-lg shadow-sm">
-                      <div>
-                        <h3 className="text-lg font-medium">Math Homework</h3>
-                        <p className="text-sm text-gray-600">
-                          Due: 21st July, 2024
-                        </p>
-                      </div>
-                      <Button variant="link" className="text-sky-600">
-                        View Details
-                      </Button>
-                    </div>
-                    <div className="flex justify-between items-center p-3 bg-gray-100 rounded-lg shadow-sm">
-                      <div>
-                        <h3 className="text-lg font-medium">Science Project</h3>
-                        <p className="text-sm text-gray-600">
-                          Due: 25th July, 2024
-                        </p>
-                      </div>
-                      <Button variant="link" className="text-sky-600">
-                        View Details
-                      </Button>
-                    </div>
-                    <div className="flex justify-between items-center p-3 bg-gray-100 rounded-lg shadow-sm">
-                      <div>
-                        <h3 className="text-lg font-medium">History Essay</h3>
-                        <p className="text-sm text-gray-600">
-                          Due: 28th July, 2024
-                        </p>
-                      </div>
-                      <Button variant="link" className="text-sky-600">
-                        View Details
-                      </Button>
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
+       <div>
+        <MessagesCard />
+       </div>
               
             </div>
           </div>
