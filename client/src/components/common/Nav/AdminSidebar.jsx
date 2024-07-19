@@ -54,27 +54,28 @@ const AdminSidebar = () => (
         </div>
         <nav className="p-4 space-y-4">
           <NavSection title="MAIN">
-            <NavItem to="/" icon={LayoutDashboardIcon}>
+            <NavItem to="/a/dashboard" icon={LayoutDashboardIcon}>
               Dashboard
             </NavItem>
-            <NavItem to="/calendar" icon={CalendarIcon}>
+            <NavItem to="/a/admission" icon={CalendarIcon}>
               Admission Management
             </NavItem>
-            <NavItem to="/time-off" icon={ClockIcon}>
+            <NavItem to="/a/students" icon={ClockIcon}>
               Student Management
             </NavItem>
-            <NavItem to="/projects" icon={ProjectorIcon}>
+            <NavItem to="/a/staff" icon={ProjectorIcon}>
               Staff Management
             </NavItem>
-            <NavItem to="/team" icon={GroupIcon}>
+            <NavItem to="/a/timetable" icon={GroupIcon}>
               TimeTable Management
             </NavItem>
-            <NavItem to="/notes" icon={StickyNoteIcon}>
+            <NavItem to="/a/announcements" icon={StickyNoteIcon}>
               Announcements
             </NavItem>
-            <NavItem to="/benefits" icon={FlagIcon} badge="NEW">
+            <NavItem to="#" icon={FlagIcon} badge="NEW">
               Benefits
             </NavItem>
+            
             <NavItem to="/a/library" icon={FilesIcon}>
               Library
             </NavItem>

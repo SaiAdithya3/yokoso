@@ -8,7 +8,11 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid, Legend } from 'recharts';
 import { CiTimer } from "react-icons/ci";
 import { MdPendingActions } from "react-icons/md";
-
+import { FaFilter } from "react-icons/fa6";
+import { CgExport } from "react-icons/cg";
+import { CiSearch } from "react-icons/ci";
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbPage, BreadcrumbSeparator, BreadcrumbList } from '@/components/ui/breadcrumb';
+import { Link } from 'react-router-dom';
 
 
 const FacultyAssignmentView = () => {
@@ -28,6 +32,8 @@ const FacultyAssignmentView = () => {
         { id: 1, rollNumber: '001', name: 'John Doe', submitted: true, submissionTime: '2024-07-15 14:00' },
         { id: 2, rollNumber: '002', name: 'Jane Smith', submitted: false },
         { id: 3, rollNumber: '003', name: 'Mike Johnson', submitted: true, submissionTime: '2024-07-16 10:00' },
+        { id: 4, rollNumber: '004', name: 'Muzan', submitted: false, submissionTime: '2024-07-16 10:00' },
+        { id: 5, rollNumber: '005', name: 'Eren ', submitted: true, submissionTime: '2024-07-16 10:00' },
         // Add more students as needed
     ];
 
@@ -49,9 +55,26 @@ const FacultyAssignmentView = () => {
     return (
         <div className="flex gap-4 min-h-screen bg-gray-50">
             <FacultySidebar />
-            <div className="flex flex-col p-4 w-full">
-                <div className="flex justify-between items-center p-3 border-b border-black/30 mb-6">
-                    <h1 className="text-3xl font-">Assignment Details - {assignmentDetails.name}</h1>
+            <div className="flex flex-col px-4  pb-20 w-full">
+                <div className="flex flex-col justify-between bg-gray-50/50 backdrop-blur-sm sticky top-0 items-start p-3 gap-3 border-b border-black/30 mb-6">
+                    <Breadcrumb className="hidden md:flex pt-2 pb-1 ">
+                        <BreadcrumbList>
+                            <BreadcrumbItem>
+                                <BreadcrumbLink asChild>
+                                    <Link to={-1}>Dashboard</Link>
+                                </BreadcrumbLink>
+                            </BreadcrumbItem>
+                            <BreadcrumbSeparator />
+                            <BreadcrumbItem>
+                                <BreadcrumbPage>Assignments</BreadcrumbPage>
+                            </BreadcrumbItem>
+                            <BreadcrumbSeparator />
+                            <BreadcrumbItem>
+                                <BreadcrumbPage>{assignmentDetails.name}</BreadcrumbPage>
+                            </BreadcrumbItem>
+                        </BreadcrumbList>
+                    </Breadcrumb>
+                    <h1 className="text-3xl font-semibold">Assignment Details - {assignmentDetails.name}</h1>
                 </div>
                 <div className="flex gap-4 mb-6">
                     <div className="w-1/3 flex flex-col bg-white rounded-xl shadow border p-4">
@@ -109,7 +132,7 @@ const FacultyAssignmentView = () => {
                                 <CardTitle>Submission Status</CardTitle>
                             </CardHeader>
                             <CardContent>
-                                <BarChart width={400} height={200} data={data}>
+                                <BarChart width={350} height={200} data={data}>
                                     <CartesianGrid strokeDasharray="3 3" />
                                     <XAxis dataKey="name" />
                                     <YAxis />
@@ -121,11 +144,20 @@ const FacultyAssignmentView = () => {
                     </div>
                 </div>
                 <div className="flex justify-between items-center px-12 mb-4">
-                    <Input placeholder="Search by name or roll number" className="w-1/3" />
+                    <div className="flex gap-1 py-1 w-1/3 items-center rounded-lg border px-2 bg-zinc-200 border-zinc-600/30">
+                        <CiSearch className=" text-2xl text-slate-900" />
+                        <input type="text" placeholder="Search students" className=" focus:outline-none  rounded-lg w-full  bg-zinc-200 border-black/40 popp py-1" />
+                    </div>
                     <div className="flex space-x-2">
-                        <Button variant="outline">Sort</Button>
-                        <Button variant="outline">Filter</Button>
-                        <Button variant="outline" >Export</Button>
+                        <button className="bg-zinc-300 rounded-lg px-4 py-2 gap-2 flex items-center text-black">
+                            <FaFilter className='text-sm rotate-90' />
+                            Sort</button>
+                        <button className="bg-black rounded-lg px-4 gap-2 flex items-center text-white">
+                            <FaFilter className='text-sm' />
+                            Filter</button>
+                        <button className="bg-black rounded-lg px-4 gap-2 flex items-center text-white">
+                            <CgExport className='text-sm' />
+                            Filter</button>
                     </div>
                 </div>
                 <div className="overflow-auto bg-white shadow rounded-lg">
@@ -141,15 +173,15 @@ const FacultyAssignmentView = () => {
                         </thead>
                         <tbody className="bg-white divide-y divide-gray-200">
                             {students.map((student) => (
-                                <tr key={student.id}>
+                                <tr className='' key={student.id}>
                                     <td className="py-3 px-6">{student.rollNumber}</td>
                                     <td className="py-3 px-6">{student.name}</td>
-                                    <td className="py-3 px-6">
-                                        {student.submitted ? <Badge variant="success">Submitted</Badge> : <Badge variant="danger">Not Submitted</Badge>}
+                                    <td className="py-3 flex items-center justify-center px-6">
+                                        {student.submitted ? <span className="text-xs px-3 py-0.5 border rounded-xl bg-green-200 border-green-400 font-semibold popp">SUBMITETD</span> : <span className="text-xs px-3 py-0.5 border rounded-xl bg-red-200 border-red-400 font-semibold popp cap">NOT SUBMITETD</span>}
                                     </td>
                                     <td className="py-3 px-6">{student.submitted ? student.submissionTime : 'N/A'}</td>
                                     <td className="py-3 px-6">
-                                        {student.submitted && <Button onClick={() => handleViewSubmission(student)}>View</Button>}
+                                        {student.submitted && <button className='text-white popp bg-black rounded-lg px-4 py-1 text-sm ' onClick={() => handleViewSubmission(student)}>View</button>}
                                     </td>
                                 </tr>
                             ))}

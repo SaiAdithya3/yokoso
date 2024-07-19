@@ -5,6 +5,7 @@ import { Table, TableHead, TableBody, TableCell, TableRow } from "../ui/table";
 import sampleStudents from "./dummydata";
 import { useNavigate } from "react-router-dom";
 import Avatar from "boring-avatars";
+import { CiSearch } from "react-icons/ci";
 
 const ListStudents = () => {
   const [students, setStudents] = useState([]);
@@ -53,15 +54,12 @@ const ListStudents = () => {
   ];
 
   return (
-    <div className="p-4 bg-white w-full">
+    <div className="p-4 w-full">
       <div className="flex justify-between items-center mb-4">
-        <Input
-          type="text"
-          placeholder="Search students..."
-          value={searchTerm}
-          onChange={handleSearch}
-          className="w-1/3"
-        />
+        <div className="flex gap-1 py-1 w-1/3 items-center rounded-lg px-2 bg-zinc-200 border-black">
+          <CiSearch className=" text-2xl text-slate-900" />
+          <input type="text" placeholder="Search students" className=" focus:outline-none  rounded-lg w-full  bg-zinc-200 border-black/40 popp py-1" />
+        </div>
         <div className="flex space-x-2">
           <div className="relative">
             <select
@@ -106,7 +104,7 @@ const ListStudents = () => {
 
       <div>
         <div className="flex justify-end items-center gap-5 mb-2">
-          <span>Sort by:</span>
+          <span className="bg-black px-5 rounded-lg py-1 text-white">Sort by:</span>
           <Button onClick={() => handleSort("name")} variant="link">
             Name
           </Button>
@@ -119,31 +117,33 @@ const ListStudents = () => {
         </div>
         {view === "list" ? (
           <Table className="cursor-pointer">
-            <TableHead>
-              <TableRow className="w-full">
-                <TableCell>Name</TableCell>
-                <TableCell>Grade</TableCell>
-                <TableCell>Attendance</TableCell>
-                <TableCell>Major</TableCell>
-                <TableCell>Email</TableCell>
-              </TableRow>
-            </TableHead>
+            {/* <div className="flex items-center justify-between"> */}
+            <TableHead className='bg-zinc-800 rounded-tl-xl text-white px-6'>Name</TableHead>
+            <TableHead className='bg-zinc-800 ronded-tl-xl text-white px-6'>AdmissionNumber</TableHead>
+            <TableHead className='bg-zinc-800 rouded-tl-xl text-white px-6'>Grade</TableHead>
+            <TableHead className='bg-zinc-800 round-tl-xl text-white px-6'>Attendance</TableHead>
+            <TableHead className='bg-zinc-800 rounde-xl text-white px-6'>Major</TableHead>
+            <TableHead className='bg-zinc-800 rounded-tr-xl text-white px-6'>Email</TableHead>
+            {/* </div> */}
             <TableBody>
               {students.map((student) => (
                 <TableRow
                   key={student.id}
                   onClick={() => navigate(`./${student.id}`)}
+                  className="hover:bg-gray-100"
                 >
-                  <TableCell>
+                  <TableCell className=''>
                     <div className="flex items-center">
+                      <span className="text-sm pr-4 font-semibold">{student.id}</span>
                       <Avatar size={34} name={student.name} variant="beam" />
                       <span className="ml-2">{student.name}</span>
                     </div>
                   </TableCell>
-                  <TableCell>{student.grade}</TableCell>
-                  <TableCell>{student.attendance}%</TableCell>
-                  <TableCell>{student.major}</TableCell>
-                  <TableCell>{student.email}</TableCell>
+                  <TableCell className='text-center px-6'>{student.id}AT{student.id}</TableCell>
+                  <TableCell className='text-center px-6'>{student.grade}</TableCell>
+                  <TableCell className='text-center px-6'>{student.attendance}%</TableCell>
+                  <TableCell className='px-6'>{student.major}</TableCell>
+                  <TableCell className='text-center px-6'>{student.email}</TableCell>
                 </TableRow>
               ))}
             </TableBody>
@@ -153,10 +153,10 @@ const ListStudents = () => {
             {students.map((student) => (
               <div
                 key={student.id}
-                className="p-4 border cursor-pointer rounded-lg mb-2 flex items-center"
+                className="px-8 py-4 border cursor-pointer rounded-xl bg-zinc-50 mb-2 flex items-start"
               >
                 <Avatar
-                  size={40}
+                  size={60}
                   name={student.name}
                   variant="beam"
                   colors={[

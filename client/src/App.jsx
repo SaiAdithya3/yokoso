@@ -23,6 +23,11 @@ import SubjectDetails from './pages/StudentFeat/SubjectDetails';
 import Announcements from './pages/StudentFeat/Announcements';
 import FacultyAnnouncements from './pages/StudentFeat/FacultyAnnouncements';
 import Facultylms from './pages/FacultyFeat/Facultylms';
+import AdminAnnouncements from './pages/AdminFeat/AdminAnnouncements';
+import StudentManagement from './pages/AdminFeat/StudentManagement';
+import StaffManagement from './pages/AdminFeat/StaffManagement';
+import TimeTableManagement from './pages/AdminFeat/TimeTableManagement';
+import AdmissionManagement from './pages/AdminFeat/AdmissionManagement';
 
 const App = () => {
   return (
@@ -52,7 +57,11 @@ const App = () => {
           <Route path="/s/assignments" element={<StudentAssignment />} />
 
           {/* admin feat */}
-          <Route path="/a/managesections" element={<FStudents />} />
+          <Route path="/a/timetable" element={<TimeTableManagement />} />
+          <Route path="/a/announcements" element={<AdminAnnouncements />} />
+          <Route path="/a/students" element={<StudentManagement />} />
+          <Route path="/a/staff" element={<StaffManagement />} />
+          <Route path="/a/admission" element={<AdmissionManagement />} />
 
           {/* profile pages */}
           <Route path="/f/profile" element={<FacultyProfile />} />

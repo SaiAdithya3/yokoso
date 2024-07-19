@@ -103,7 +103,7 @@ const StudentDashboard = ({ gotoAttendence }) => {
             </div>
 
             {/* Attendance and Grades Section */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            {/* <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
 
               <div className="bg-white flex w-full justify-between border border-zinc-50 shadow rounded-2xl p-6">
                 <div className="    ">
@@ -121,10 +121,10 @@ const StudentDashboard = ({ gotoAttendence }) => {
                 <p className="text-gray-700">GPA: 8.5</p>
               </div>
 
-            </div>
+            </div> */}
 
             {/* Quick Links Section */}
-            <div className="bg-white border border-zinc-50 shadow rounded-2xl p-6">
+            {/* <div className="bg-white border border-zinc-50 shadow rounded-2xl p-6">
               <h2 className="text-2xl font-semibold mb-4">Quick Links</h2>
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                 <a href="#" className="bg-blue-500 text-white text-center py-4 rounded-md">LMS</a>
@@ -134,7 +134,7 @@ const StudentDashboard = ({ gotoAttendence }) => {
                 <a href="#" className="bg-red-500 text-white text-center py-4 rounded-md">Assignments</a>
                 <a href="#" className="bg-indigo-500 text-white text-center py-4 rounded-md">Attendance</a>
               </div>
-            </div>
+            </div> */}
           </div>
 
         )

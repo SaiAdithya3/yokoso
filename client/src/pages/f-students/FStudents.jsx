@@ -19,12 +19,12 @@ const FStudents = () => {
 
   return (
     <>
-      <div className="flex gap-4">
+      <div className="flex gap-4 bg-slate-100">
         <FacultySidebar />
-        <div className="flex w-full flex-col items-start  gap-2">
-          <div className="w-full flex bg-white/40 backdrop-blur-sm border-b border-black/30 flex-col gap-2 sticky p-4 z-50 top-0">
-            <Breadcrumb className="hidden md:flex px-2 pb-2">
-              <BreadcrumbList>
+        <div className="flex w-full flex-col items-start bg-slate-100 gap-2">
+          <div className="w-full flex bg-slate-100/40 backdrop-blur-sm border-b border-black/30 flex-col gap-2 sticky p-4 z-50 top-0">
+            <Breadcrumb className="hidden md:flex px-2 pb-2 popp font">
+              <BreadcrumbList >
                 <BreadcrumbItem>
                   <BreadcrumbLink asChild>
                     <Link to={-1}>Dashboard</Link>
@@ -40,14 +40,14 @@ const FStudents = () => {
                 </BreadcrumbItem>
               </BreadcrumbList>
             </Breadcrumb>
-            <h1 className="text-2xl px-2 font-semibold">Students</h1>
+            <h1 className="text-2xl px-2 font-semibold">Students of Section {selectedSection}</h1>
           </div>
           <div className="flex w-full items-start gap-4">
             <div className="w-1/4 flex flex-col sticky top-24 p-4 justify-center gap-4 items-center">
               {sections.map((section) => (
                 <div
                   key={section.id}
-                  className={`cursor-pointer p-4 border border-gray-300 rounded-lg ${selectedSection === section.id ? "bg-zinc-200 border-2 border-zinc-700/40 " : ""
+                  className={`cursor-pointer p-4 border border-gray-300 rounded-lg ${selectedSection === section.id ? "bg-indigo-200 border-2 border-indigo-700/40 " : ""
                     }`}
                   onClick={() => handleSectionClick(section.id)}
                 >
