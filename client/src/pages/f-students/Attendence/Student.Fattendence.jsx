@@ -161,7 +161,7 @@ function AttendanceTable({ students, attendance, setAttendance }) {
         <tr>
           <th className="px-4 py-3 text-left font-medium">Name</th>
           <th className="px-4 py-3 text-left font-medium">Student ID</th>
-          <th className="px-4 py-3 text-left font-medium">Email</th>
+          {/* <th className="px-4 py-3 text-left font-medium">Email</th> */}
           <th className="px-4 py-3 text-center font-medium">Attendance</th>
         </tr>
       </thead>
@@ -170,10 +170,10 @@ function AttendanceTable({ students, attendance, setAttendance }) {
           <tr key={index} className="border-b bg-background even:bg-muted/20">
             <td className="px-4 py-3">{student.name}</td>
             <td className="px-4 py-3">{student.id}</td>
-            <td className="px-4 py-3">{student.email}</td>
+            {/* <td className="px-4 py-3">{student.email}</td> */}
             <td className="px-4 py-3 text-center">
               <div className=" flex gap-2">
-                {/* <Toggle
+                <Toggle
                   aria-label="Toggle attendance"
                   onClick={() => toggleAttendance(student.id)}
                   className={
@@ -185,7 +185,7 @@ function AttendanceTable({ students, attendance, setAttendance }) {
                   ) : (
                     <XIcon className="h-5 w-5 text-primary" />
                   )}
-                </Toggle> */}
+                </Toggle>
                 <label className="inline-flex items-center cursor-pointer">
                   <input
                     type="checkbox"

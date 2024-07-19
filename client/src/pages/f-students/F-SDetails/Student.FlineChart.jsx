@@ -42,7 +42,7 @@ const StudentGraph = () => {
   return (
     <Card className="">
       <CardHeader>
-        <CardTitle>Semester TGPA</CardTitle>
+        <CardTitle>Semester CGPA</CardTitle>
         <CardDescription>Semester 1 - Semester 8</CardDescription>
       </CardHeader>
       <CardContent>
@@ -77,11 +77,11 @@ const StudentGraph = () => {
       </CardContent>
       <CardFooter className="flex-col items-start gap-2 text-sm">
         <div className="flex gap-2 font-medium leading-none">
-          Trending up by 0.2 TGPA this semester{" "}
+          Trending up by 0.2 CGPA this semester{" "}
           <TrendingUpIcon className="h-4 w-4" />
         </div>
         <div className="leading-none text-muted-foreground">
-          Showing total TGPA for the last 8 semesters
+          Showing total CGPA for the last 8 semesters
         </div>
       </CardFooter>
     </Card>

@@ -136,7 +136,7 @@ const Login = () => {
           className="  object-cover   bg-no-repeat  w-52 h-52"
         />
         <h1 className=" text-3xl text-gray-700  font-serif">
-          CMR INSTITUTE OF TECHNOLOGY
+          CMR College of Engineering and Technology
         </h1>
       </div>
     </div>
