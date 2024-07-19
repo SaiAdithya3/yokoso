@@ -83,6 +83,9 @@ const StudentSidebar = () => {
               <NavItem to="/s/announcements" icon={ProjectorIcon} badge="NEW">
                 Announcements
               </NavItem>
+              <NavItem to="/s/alumni" icon={ProjectorIcon} badge="NEW">
+                Alumni
+              </NavItem>
 
             </NavSection>
             <NavSection title="FAVORITES">

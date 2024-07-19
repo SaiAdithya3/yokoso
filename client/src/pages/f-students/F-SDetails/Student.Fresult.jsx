@@ -37,7 +37,7 @@ const subjectsData = [
   {
     title: "Subject 1",
     marks: 92,
-    grade: "A",
+    grade: "O",
     details: [
       { name: "Continuous Assessment", marks: "30/40" },
       { name: "Mid Terms", marks: "32/40" },
@@ -48,7 +48,7 @@ const subjectsData = [
   {
     title: "Subject 2",
     marks: 85,
-    grade: "B+",
+    grade: "A",
     details: [
       { name: "Continuous Assessment", marks: "28/40" },
       { name: "Mid Terms", marks: "30/40" },
@@ -59,7 +59,7 @@ const subjectsData = [
   {
     title: "Subject 3",
     marks: 88,
-    grade: "A-",
+    grade: "B",
     details: [
       { name: "Continuous Assessment", marks: "32/40" },
       { name: "Mid Terms", marks: "34/40" },
@@ -81,7 +81,7 @@ const subjectsData = [
   {
     title: "Subject 5",
     marks: 82,
-    grade: "B-",
+    grade: "C",
     details: [
       { name: "Continuous Assessment", marks: "28/40" },
       { name: "Mid Terms", marks: "26/40" },
@@ -92,7 +92,7 @@ const subjectsData = [
   {
     title: "Subject 6",
     marks: 87,
-    grade: "A-",
+    grade: "C",
     details: [
       { name: "Continuous Assessment", marks: "33/40" },
       { name: "Mid Terms", marks: "32/40" },

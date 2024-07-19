@@ -21,7 +21,7 @@ const TeachingContent = () => {
   const subjects = [
     {
       id: 1,
-      courseID: 'CSE101',
+      courseID: 'C++',
       courseName: 'Introduction to Computer Science',
       color: 'bg-blue-200',
       border: 'border-blue-400',
@@ -29,7 +29,7 @@ const TeachingContent = () => {
     },
     {
       id: 2,
-      courseID: 'MEC102',
+      courseID: 'DBMS',
       courseName: 'Mechanical Engineering Basics',
       image: cloud,
       color: 'bg-red-200',
@@ -37,7 +37,7 @@ const TeachingContent = () => {
     },
     {
       id: 3,
-      courseID: 'CSE201',
+      courseID: 'DSA',
       courseName: 'Data Structures and Algorithms',
       color: 'bg-green-200',
       border: 'border-green-400',
@@ -45,7 +45,7 @@ const TeachingContent = () => {
     },
     {
       id: 4,
-      courseID: 'CSE301',
+      courseID: 'OS',
       courseName: 'Operating Systems',
       color: 'bg-yellow-200',
       border: 'border-yellow-400',
@@ -53,7 +53,7 @@ const TeachingContent = () => {
     },
     {
       id: 5,
-      courseID: 'CSE401',
+      courseID: 'ML',
       courseName: 'Machine Learning',
       color: 'bg-purple-200',
       border: 'border-purple-400',
@@ -61,7 +61,7 @@ const TeachingContent = () => {
     },
     {
       id: 6,
-      courseID: 'CSE501',
+      courseID: 'AI',
       courseName: 'Artificial Intelligence',
       color: 'bg-pink-200',
       border: 'border-pink-400',
