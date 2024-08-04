@@ -30,6 +30,7 @@ import TimeTableManagement from "./pages/AdminFeat/TimeTableManagement";
 import AdmissionManagement from "./pages/AdminFeat/AdmissionManagement";
 import Alumni from "./pages/alumni/Index";
 import Studentfms from "./pages/fms/Studentfms";
+import StudentRes from "./pages/residential/StudentRes";
 
 const App = () => {
   return (
@@ -94,6 +95,9 @@ const App = () => {
 
           {/* finance management system  */}
           <Route path="/s/fms" element={<Studentfms />} />
+
+          {/* residential management system */}
+          <Route path="/s/residential" element={<StudentRes/>} />
 
           {/* 404 page */}
           <Route path="*" element={<h1>404 Page Not Found</h1>} />

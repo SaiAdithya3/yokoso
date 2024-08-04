@@ -74,7 +74,7 @@ const StudentSidebar = () => {
               <NavItem to="/s/assignments" icon={CalendarIcon}>
                 Assignments
               </NavItem>
-              <NavItem to="/" icon={StickyNoteIcon}>
+              <NavItem to="/s/residential" icon={StickyNoteIcon}>
                 Residential
               </NavItem>
               <NavItem to="/s/rms" icon={FlagIcon} badge="NEW">
