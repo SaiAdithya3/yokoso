@@ -30,7 +30,7 @@ import {
 
 export default function StudentOverview() {
   return (
-    <div className="border flex flex-col gap-2 rounded-2xl h-fit w-full ">
+    <div className="border flex p-4 flex-col gap-2 rounded-2xl h-fit w-full ">
       <CardHeader>
         <h1 className="text-2xl">Student Overview</h1>
       </CardHeader>
