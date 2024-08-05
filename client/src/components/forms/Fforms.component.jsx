@@ -1,10 +1,11 @@
 import React from 'react'
-import FormBuilder from './FormBuilder'
+import MyForms from './MyForms'
 
 const FformsComponents = () => {
   return (
     <div>
-       <FormBuilder /> 
+       {/* <FormBuilder />  */}
+       <MyForms />
     </div>
   )
 }

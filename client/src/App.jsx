@@ -32,6 +32,10 @@ import Alumni from "./pages/alumni/Index";
 import Studentfms from "./pages/fms/Studentfms";
 import StudentRes from "./pages/residential/StudentRes";
 import Fforms from "./pages/forms/Fforms";
+import Fformbuilder from "./pages/forms/Fformbuilder";
+import FformResponses from "./pages/forms/FformReponses";
+import FformView from "./pages/forms/FformView";
+import FformReport from "./pages/forms/FformReport";
 
 const App = () => {
   return (
@@ -98,10 +102,14 @@ const App = () => {
           <Route path="/s/fms" element={<Studentfms />} />
 
           {/* residential management system */}
-          <Route path="/s/residential" element={<StudentRes/>} />
+          <Route path="/s/residential" element={<StudentRes />} />
 
           {/* forms */}
-          <Route path="/f/forms" element={<Fforms/>} />
+          <Route path="/f/forms" element={<Fforms />} />
+          <Route path="/f/forms/:id" element={<Fformbuilder />} />
+          <Route path="/f/forms/:id/responses" element={<FformResponses />} />
+          <Route path="/f/forms/:id/view" element={<FformView />} />
+          <Route path="/f/forms/:id/report" element={<FformReport />} />
 
           {/* 404 page */}
           <Route path="*" element={<h1>404 Page Not Found</h1>} />
