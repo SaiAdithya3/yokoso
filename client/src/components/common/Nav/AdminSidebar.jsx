@@ -72,8 +72,8 @@ const AdminSidebar = () => (
             <NavItem to="/a/announcements" icon={StickyNoteIcon}>
               Announcements
             </NavItem>
-            <NavItem to="#" icon={FlagIcon} badge="NEW">
-              Benefits
+            <NavItem to="/a/overview" icon={FlagIcon} badge="NEW">
+              Overview
             </NavItem>
             
             <NavItem to="/a/library" icon={FilesIcon}>

@@ -32,6 +32,7 @@ import Alumni from "./pages/alumni/Index";
 import Studentfms from "./pages/fms/Studentfms";
 import StudentRes from "./pages/residential/StudentRes";
 import Fforms from "./pages/forms/Fforms";
+import Overview from "./pages/OverviewAnalysis/Overview";
 
 const App = () => {
   return (
@@ -102,6 +103,10 @@ const App = () => {
 
           {/* forms */}
           <Route path="/f/forms" element={<Fforms/>} />
+
+
+          {/* analysis overview of school  */}
+          <Route path="/a/overview" element={<Overview />} />
 
           {/* 404 page */}
           <Route path="*" element={<h1>404 Page Not Found</h1>} />
