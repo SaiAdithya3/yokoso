@@ -11,6 +11,7 @@ const FStudents = () => {
     { id: 2, title: "Section 2", description: "Description of Section 2" },
     { id: 3, title: "Section 3", description: "Description of Section 3" },
     { id: 4, title: "Section 4", description: "Description of Section 4" },
+    { id : 5 , title : "My Mentees" , description : "Mentees of the faculty" }
   ];
 
   const handleSectionClick = (id) => {
