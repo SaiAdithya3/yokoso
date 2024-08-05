@@ -63,7 +63,7 @@ const StudentSidebar = () => {
                 Teaching Content
               </NavItem>
               <NavItem to="/" icon={ClockIcon}>
-                Time Table
+                Learning Management
               </NavItem>
               <NavItem to="/s/results" icon={ProjectorIcon}>
                 Exams / Results
