@@ -36,6 +36,7 @@ import Fformbuilder from "./pages/forms/Fformbuilder";
 import FformResponses from "./pages/forms/FformReponses";
 import FformView from "./pages/forms/FformView";
 import FformReport from "./pages/forms/FformReport";
+import Overview from "./pages/OverviewAnalysis/Overview";
 
 const App = () => {
   return (
@@ -110,6 +111,10 @@ const App = () => {
           <Route path="/f/forms/:id/responses" element={<FformResponses />} />
           <Route path="/f/forms/:id/view" element={<FformView />} />
           <Route path="/f/forms/:id/report" element={<FformReport />} />
+
+
+          {/* analysis overview of school  */}
+          <Route path="/a/overview" element={<Overview />} />
 
           {/* 404 page */}
           <Route path="*" element={<h1>404 Page Not Found</h1>} />

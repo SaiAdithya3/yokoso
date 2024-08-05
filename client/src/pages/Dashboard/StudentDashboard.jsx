@@ -18,6 +18,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import MessagesCard from "@/components/StudentDash/Attendence/MessageCard";
+import Authorities from "./Authorities";
 
 const StudentDashboard = ({ gotoAttendence }) => {
   const location = useLocation();
@@ -195,6 +196,7 @@ const StudentDashboard = ({ gotoAttendence }) => {
               ))}
             </CardContent>
           </Card>
+        <Authorities />
         </div>
       )}
     </div>
