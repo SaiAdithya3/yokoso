@@ -33,20 +33,20 @@ import AttendanceStats from "./AttendanceStats";
 
 export default function AdminOver() {
   return (
-    <div className="flex gap-4 w-full p-10 overflow-hidden">
+    <div className="grid gap-4 grid-cols-1 md:grid-cols-2  3xl:grid-cols-3 w-full p-10 overflow-hidden">
       <div className="flex flex-col gap-6">
         <StudentOverview />
         <CourseWiseAnalysis />
-      <EnrollmentTrends />
+        <GradeDistribution />
       </div>
       <div className="flex flex-col w-full gap-6">
-        <GradeDistribution />
+        <AverageGPA />
         <YearOverYearAnalysis />
         
         <PerformanceOverview />
       </div>
       <div className="flex flex-col gap-6">
-        <AverageGPA />
+      <EnrollmentTrends />
         <AttendanceStats />
         <LinechartChart />
       </div>
