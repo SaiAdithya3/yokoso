@@ -55,7 +55,7 @@ const StudentDashboard = ({ gotoAttendence }) => {
   ];
 
   return (
-    <div className="flex gap-4 min-h-screen bg-white/40">
+    <div className="flex gap-4 min-h-screen w-full bg-white/40">
       <StudentSidebar />
       {gotoAttendence ? (
         <Student />
@@ -162,10 +162,10 @@ const StudentDashboard = ({ gotoAttendence }) => {
                   </CardContent>
                 </Card>
               </div>
-       <div>
-        <MessagesCard />
-       </div>
-              
+              <div>
+                <MessagesCard />
+              </div>
+
             </div>
           </div>
 
@@ -196,7 +196,9 @@ const StudentDashboard = ({ gotoAttendence }) => {
               ))}
             </CardContent>
           </Card>
-        <Authorities />
+          <div className="w-full">
+            <Authorities />
+          </div>
         </div>
       )}
     </div>

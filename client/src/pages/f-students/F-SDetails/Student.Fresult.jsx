@@ -35,7 +35,7 @@ const semesters = [1, 2, 3, 4, 5, 6, 7, 8];
 
 const subjectsData = [
   {
-    title: "Subject 1",
+    title: "Maths 1",
     marks: 92,
     grade: "O",
     details: [
@@ -46,7 +46,7 @@ const subjectsData = [
     ],
   },
   {
-    title: "Subject 2",
+    title: "Physics 2",
     marks: 85,
     grade: "A",
     details: [
@@ -57,7 +57,7 @@ const subjectsData = [
     ],
   },
   {
-    title: "Subject 3",
+    title: "Chemistry 3",
     marks: 88,
     grade: "B",
     details: [
@@ -68,7 +68,7 @@ const subjectsData = [
     ],
   },
   {
-    title: "Subject 4",
+    title: "Data Structures 4",
     marks: 90,
     grade: "A",
     details: [
@@ -79,7 +79,7 @@ const subjectsData = [
     ],
   },
   {
-    title: "Subject 5",
+    title: "Machine Learning 5",
     marks: 82,
     grade: "C",
     details: [
@@ -90,7 +90,7 @@ const subjectsData = [
     ],
   },
   {
-    title: "Subject 6",
+    title: "Finance 6",
     marks: 87,
     grade: "C",
     details: [

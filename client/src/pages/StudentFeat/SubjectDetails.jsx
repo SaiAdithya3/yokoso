@@ -36,6 +36,16 @@ const SubjectDetails = () => {
         unitName: 'Algorithms',
         topics: ['Sorting Algorithms', 'Searching Algorithms', 'Dynamic Programming', 'Graph Algorithms'],
       },
+      {
+        id: 4,
+        unitName: 'Operating Systems',
+        topics: ['Processes', 'Threads', 'Scheduling', 'Deadlocks', 'Memory Management'],
+      },
+      {
+        id: 5,
+        unitName: 'Database Management Systems',
+        topics: ['ER Diagrams', 'Normalization', 'SQL Queries', 'Transactions'],
+      }
     ],
   };
 

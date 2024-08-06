@@ -44,8 +44,8 @@ import {
     };
     return (
       <>
-        <div className="flex flex-col w-full pb-10 px-6 min-h-screen bg-muted/40">
-          <div className="border-b mt-8 flex  flex-col gap-5">
+        <div className="flex popp flex-col w-full pb-10 px-6 min-h-screen bg-muted/40">
+          <div className="border-b flex sticky top-0 backdrop-blur-sm bg-slate-50 z-50 pt-8 flex-col gap-5">
             <div className=" flex  w-full justify-between px-4">
   
               <Breadcrumb className="hidden md:flex">
@@ -135,7 +135,7 @@ import {
         stroke="currentColor"
         strokeWidth="2"
         strokeLinecap="round"
-        strokeLinejoin="round"
+        strokeLinejoin="round"  
       >
         <path d="M8 2v4" />
         <path d="M16 2v4" />

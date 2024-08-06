@@ -54,7 +54,7 @@ const StudentSidebar = () => {
             />
             <h1 className="text-2xl font-bold uppercase ml-2">Yokoso </h1>
           </div>
-          <nav className="p-4 space-y-4">
+          <nav className="font-semibold p-4 space-y-4">
             <NavSection title="MAIN">
               <NavItem to="/s/dashboard" icon={LayoutDashboardIcon}>
                 Dashboard

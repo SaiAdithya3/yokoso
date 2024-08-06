@@ -45,9 +45,9 @@ const chartConfig = {
 
 const ResultsPage = () => {
   return (
-    <div className="flex gap-4 min-h-screen bg-gray-50">
+    <div className="flex gap-4 min-h-screen  bg-gray-50">
       <StudentSidebar />
-      <div className="flex gap-4 flex-col p-4 w-full">
+      <div className="flex gap-4 popp flex-col p-4 w-full">
         <Breadcrumb className="hidden md:flex px-2 pb-2">
           <BreadcrumbList>
             <BreadcrumbItem>
@@ -67,7 +67,7 @@ const ResultsPage = () => {
             <Card className="flex flex-col w-full">
               <CardHeader className="items-center pb-0">
                 <CardTitle>CGPA Indicator</CardTitle>
-                <CardDescription>Current Semester</CardDescription>
+                <CardDescription>Overall  </CardDescription>
               </CardHeader>
               <CardContent className="flex-1 pb-0">
                 <ChartContainer
@@ -77,7 +77,7 @@ const ResultsPage = () => {
                   <RadialBarChart
                     data={chartData}
                     startAngle={90}
-                    endAngle={90 + (cgpa * 360 / 10)} // Adjust endAngle based on CGPA
+                    endAngle={90 + (5.6 * 360 / 10)} // Adjust endAngle based on CGPA
                     innerRadius={80}
                     outerRadius={110}
                     barSize={10}
@@ -86,7 +86,7 @@ const ResultsPage = () => {
                       gridType="circle"
                       radialLines={false}
                       stroke="none"
-                      className="first:fill-muted last:fill-background"
+                      className="first:fill-muted fill-red-400 last:fill-background"
                       polarRadius={[86, 74]}
                     />
                     <RadialBar dataKey="value" background cornerRadius={10} />
@@ -125,10 +125,10 @@ const ResultsPage = () => {
                 </ChartContainer>
               </CardContent>
               <div className="leading-none text-sm w-full text-center pb-2 text-muted-foreground">
-                Showing CGPA for the current semester
+                Showing overall CGPA  
               </div>
             </Card>
-            <Card className="flex flex-col w-full">
+            <Card className="flex flex-col ml-4 w-full">
               <CardHeader className="items-center pb-0">
                 <CardTitle>CGPA Indicator</CardTitle>
                 <CardDescription>Current Semester</CardDescription>
@@ -141,7 +141,7 @@ const ResultsPage = () => {
                   <RadialBarChart
                     data={chartData}
                     startAngle={90}
-                    endAngle={90 + (cgpa * 360 / 10)} // Adjust endAngle based on CGPA
+                    endAngle={90 + (9.6 * 360 / 10)} // Adjust endAngle based on CGPA
                     innerRadius={80}
                     outerRadius={110}
                     barSize={10}
@@ -170,7 +170,7 @@ const ResultsPage = () => {
                                   y={viewBox.cy}
                                   className="fill-foreground text-4xl font-bold"
                                 >
-                                  {cgpa.toFixed(2)}
+                                  {(9.6).toFixed(2)}
                                 </tspan>
                                 <tspan
                                   x={viewBox.cx}
